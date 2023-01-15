@@ -1,0 +1,50 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #3a73f8;
+}
+
+.navbar .connex {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.navbar .logo {
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 10px;
+    width: 30px;
+}
+
+.navbar .links {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.links .container {
+    border-left: 2px solid white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 15px;
+    padding: 5px;
+    color: white;
+}
+
+.navbar a:hover {
+    font-weight: bold;
+}
+
+.navbar .icons {
+    width: 20px;
+    margin-right: 5px;
+}

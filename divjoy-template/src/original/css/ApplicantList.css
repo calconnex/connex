@@ -1,0 +1,57 @@
+.above {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 10px;
+}
+  
+.tableButtons {
+    display: flex;
+}
+
+.filter {
+    color: #2C80FF;
+    border: 2px solid #2C80FF;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.manage {
+    color: #2C80FF;
+    border: 2px solid #2C80FF;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.export {
+    color: #2C80FF;
+    border: 2px solid #2C80FF;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.manageApplicants {
+    color: #2C80FF;
+    border: 2px solid #2C80FF;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.above button {
+    background-color: white;
+    color: #2C80FF;
+    border: 2px solid #2C80FF;
+}
+
+button:hover {
+    background-color: #2C80FF;
+    color: white;
+    cursor: pointer;
+}
