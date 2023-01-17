@@ -5,7 +5,6 @@ import setting from "../icons/setting.png"
 import home from "../icons/home.png"
 import compare from "../icons/compare.png"
 
-
 const Navbar = ({toggleSignedIn}) => {
 
   function check() {
