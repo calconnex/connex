@@ -5,11 +5,7 @@ import setting from "../icons/setting.png"
 import home from "../icons/home.png"
 import compare from "../icons/compare.png"
 
-const Navbar = ({toggleSignedIn}) => {
-
-  function check() {
-    toggleSignedIn();
-  }
+const Navbar = () => {
   
   return (
     <nav className="navbar">
@@ -20,7 +16,7 @@ const Navbar = ({toggleSignedIn}) => {
 
       <div className="links">
         <div className="container">
-          <Link to="/" onClick={() => check()}>Sign Out</Link>
+          <Link to="/">Sign Out</Link>
         </div>
         <div className="container">
           <img src={home} alt="home icon" className="icons"/>

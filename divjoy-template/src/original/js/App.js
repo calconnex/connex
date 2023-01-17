@@ -4,36 +4,34 @@ import Compare from './Compare.js';
 import NotFound from './NotFound.js';
 import ApplicantDetails from './ApplicantDetails.js'
 import SignIn from './SignIn';
-import { useState } from "react";
 import "../css/index.css";
+import AuthPage from '../../pages/auth';
 
 
 function App() {
-  const [signedIn, setSignedIn] = useState(false)
-  const toggleSignedIn = () => {
-    setSignedIn(!signedIn);
-  }
-
   return (
     <Router>
       <div className="App">
-        <div className="content">
           <Switch>
-            <Route exact path="/" render={() => !signedIn ?<SignIn toggleSignedIn={toggleSignedIn}/>:<Home toggleSignedIn={toggleSignedIn}/>}/>
+            <Route exact path="/">
+              <SignIn />
+            </Route>
+
+            <Route exact path="/auth/:type" component={AuthPage} />
+
             <Route path="/home">
-              <Home toggleSignedIn={toggleSignedIn}/>
+              <Home />
             </Route>
             <Route path="/compare">
-              <Compare toggleSignedIn={toggleSignedIn}/>
+              <Compare />
             </Route>
             <Route path="/applicants/:id">
-              <ApplicantDetails toggleSignedIn={toggleSignedIn}/>
+              <ApplicantDetails />
             </Route>
             <Route path="*">
-              <NotFound toggleSignedIn={toggleSignedIn}/>
+              <NotFound />
             </Route>
           </Switch>
-        </div>
       </div>
     </Router>
   );

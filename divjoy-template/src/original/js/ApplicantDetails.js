@@ -5,7 +5,7 @@ import Pdf from "./PDF";
 import "../css/ApplicantDetails.css";
 import Navbar from "./Navbar";
 
-const ApplicantDetails = ({toggleSignedIn}) => {
+const ApplicantDetails = () => {
   const { id } = useParams();
   const { data: application, error, isPending } = useFetch('http://localhost:8000/applicants/' + id);
 
@@ -13,7 +13,7 @@ const ApplicantDetails = ({toggleSignedIn}) => {
     <div class="overall">
       { isPending && <div>Loading...</div> }
       { error && <div>{ error }</div> }
-      <Navbar toggleSignedIn={toggleSignedIn}/>
+      <Navbar/>
       { application && (
         <article>
           <div class="left">

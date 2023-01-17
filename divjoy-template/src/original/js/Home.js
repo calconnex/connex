@@ -3,12 +3,12 @@ import ApplicantList from "./ApplicantList";
 import data from "../data/db.json";
 import Navbar from "./Navbar";
 
-const Home = ({toggleSignedIn}) => {
+const Home = () => {
   // const { error, isPending, data: applicants } = useFetch('db.json')
 
   return (
     <div className="home">
-      <Navbar toggleSignedIn={toggleSignedIn}/>
+      <Navbar/>
       {/* { error && <div>{ error }</div> }
       { isPending && <div>Loading...</div> } */}
       { data.applicants && <ApplicantList applicants={data.applicants} /> }
