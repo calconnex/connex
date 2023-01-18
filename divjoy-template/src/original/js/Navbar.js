@@ -4,9 +4,11 @@ import connex from "../icons/logo.png";
 import setting from "../icons/setting.png"
 import home from "../icons/home.png"
 import compare from "../icons/compare.png"
+import { useAuth } from "../../util/auth";
 
 const Navbar = () => {
-  
+  const auth = useAuth();
+
   return (
     <nav className="navbar">
       <div className="connex">
@@ -16,7 +18,7 @@ const Navbar = () => {
 
       <div className="links">
         <div className="container">
-          <Link to="/">Sign Out</Link>
+          <Link to="/" onClick={(event) => {auth.signout()}}>Sign Out</Link>
         </div>
         <div className="container">
           <img src={home} alt="home icon" className="icons"/>

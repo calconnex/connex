@@ -14,31 +14,30 @@ function App() {
   return (
     <QueryClientProvider>
       <AuthProvider>
-      <Router>
-      <div className="App">
-          <Switch>
-            <Route exact path="/">
-              <SignIn />
-            </Route>
+        <Router>
+          <div className="App">
+            <Switch>
+              <Route exact path="/">
+                <SignIn />
+              </Route>
 
-            <Route exact path="/auth/:type" component={AuthPage} />
+              <Route exact path="/auth/:type" component={AuthPage}/>
 
-            <Route path="/home">
-              <Home />
-            </Route>
-            <Route path="/compare">
-              <Compare />
-            </Route>
-            <Route path="/applicants/:id">
-              <ApplicantDetails />
-            </Route>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
-      </div>
-    </Router>
-
+              <Route path="/home">
+                <Home />
+              </Route>
+              <Route path="/compare">
+                <Compare />
+              </Route>
+              <Route path="/applicants/:id">
+                <ApplicantDetails />
+              </Route>
+              <Route path="*">
+                <NotFound />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
       </AuthProvider>
     </QueryClientProvider>
   );

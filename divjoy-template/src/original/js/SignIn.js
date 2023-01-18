@@ -15,7 +15,7 @@ const SignIn = () => {
                 </div>
                 <div className="forms">
                     Welcome to Connex! To use our platform please click the button below.
-                    <Link to="/auth/signin">Sign up</Link>
+                    <Link to="/auth/signin">Go to Connex</Link>
                 </div>
             </div>
         </div>
