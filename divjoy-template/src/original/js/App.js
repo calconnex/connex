@@ -6,11 +6,15 @@ import ApplicantDetails from './ApplicantDetails.js'
 import SignIn from './SignIn';
 import "../css/index.css";
 import AuthPage from '../../pages/auth';
+import { AuthProvider } from "../../util/auth";
+import { QueryClientProvider } from "../../util/db";
 
 
 function App() {
   return (
-    <Router>
+    <QueryClientProvider>
+      <AuthProvider>
+      <Router>
       <div className="App">
           <Switch>
             <Route exact path="/">
@@ -34,6 +38,9 @@ function App() {
           </Switch>
       </div>
     </Router>
+
+      </AuthProvider>
+    </QueryClientProvider>
   );
 }
 

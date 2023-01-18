@@ -35,10 +35,16 @@
     text-align: center;
 }
 
-.go {
+.forms a {
     margin-top: 20px;
-    padding: 5px;
-    background-color: white;
+    text-decoration: none;
     border: 2px solid #2C80FF;
     border-radius: 10px;
+    padding: 5px;
+}
+
+.forms a:hover {
+    color: white;
+    background-color: #2C80FF;
+
 }

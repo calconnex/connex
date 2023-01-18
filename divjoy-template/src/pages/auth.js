@@ -6,6 +6,10 @@ import { useRouter } from "./../util/router";
 function AuthPage(props) {
   const router = useRouter();
 
+  console.log(router)
+  console.log(router.query.type)
+  console.log(router.query.next)
+
   return (
     <>
       <Meta title="Auth" />
@@ -15,8 +19,9 @@ function AuthPage(props) {
         bgImage=""
         bgImageOpacity={1}
         type={router.query.type}
-        providers={["google", "facebook", "twitter"]}
-        afterAuthPath={router.query.next || "/dashboard"}
+        // providers={["google", "facebook", "twitter"]}
+        providers={["google"]}
+        afterAuthPath={router.query.next || "/home"}
       />
     </>
   );

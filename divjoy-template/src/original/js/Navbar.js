@@ -30,9 +30,6 @@ const Navbar = () => {
           <img src={setting} alt="home icon" className="icons"/>
           <Link to="/nopath">Settings</Link>
         </div>
-        {/* <div className="container">
-          <Link to="/create">Create</Link>
-        </div> */}
       </div>
     </nav>
   );
