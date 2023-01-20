@@ -6,10 +6,6 @@ import { useRouter } from "./../util/router";
 function AuthPage(props) {
   const router = useRouter();
 
-  console.log(router)
-  console.log(router.query.type)
-  console.log(router.query.next)
-
   return (
     <>
       <Meta title="Auth" />

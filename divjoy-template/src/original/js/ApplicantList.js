@@ -4,6 +4,7 @@ import { useState } from "react";
 import FilterPopup from "./FilterPopup";
 import ManagePopup from "./ManagePopup";
 import ExportPopup from "./ExportPopup";
+import { useAllApplicants } from "../../util/db";
 
 const ApplicantList = ({ applicants }) => {
 
@@ -31,6 +32,8 @@ const ApplicantList = ({ applicants }) => {
   const toggleExport = () => {
     setExportOpen(!exportOpen);
   }
+
+  console.log(useAllApplicants())
 
   return (
     <div className="applicant-list">

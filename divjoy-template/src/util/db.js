@@ -13,6 +13,7 @@ import {
   where,
   orderBy,
   getDoc,
+  getDocs,
   setDoc,
   updateDoc,
   addDoc,
@@ -95,6 +96,16 @@ export function useItemsByOwner(owner) {
     ),
     { enabled: !!owner }
   );
+}
+
+export async function useAllApplicants() {
+
+  const querySnapshot = await getDocs(collection(db, "Applicants"));
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+  });
+      
 }
 
 // Create a new item
