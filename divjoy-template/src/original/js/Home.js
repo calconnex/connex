@@ -2,16 +2,18 @@ import ApplicantList from "./ApplicantList";
 // import useFetch from "./useFetch";
 import data from "../data/db.json";
 import Navbar from "./Navbar";
+import { useAllApplicants } from "../../util/db";
 
 const Home = () => {
-  // const { error, isPending, data: applicants } = useFetch('db.json')
+  const newData = useAllApplicants();
 
   return (
     <div className="home">
       <Navbar/>
       {/* { error && <div>{ error }</div> }
       { isPending && <div>Loading...</div> } */}
-      { data.applicants && <ApplicantList applicants={data.applicants} /> }
+      { newData.data && <ApplicantList applicants={newData.data} /> }
+      {/* { data.applicants && <ApplicantList applicants={data.applicants} /> } */}
     </div>
   );
 }

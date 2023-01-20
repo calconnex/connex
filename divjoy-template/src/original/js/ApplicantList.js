@@ -33,7 +33,6 @@ const ApplicantList = ({ applicants }) => {
     setExportOpen(!exportOpen);
   }
 
-  console.log(useAllApplicants())
 
   return (
     <div className="applicant-list">

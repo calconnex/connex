@@ -98,14 +98,22 @@ export function useItemsByOwner(owner) {
   );
 }
 
-export async function useAllApplicants() {
+export function useAllApplicants() {
+  return useQuery(
+    ["Applicants"],
+    createQuery(() =>
+      query(
+        collection(db, "Applicants"),
+        orderBy("id", "desc")
+      )
+    )
+  );
+}
 
-  const querySnapshot = await getDocs(collection(db, "Applicants"));
-  querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
-  });
-      
+export async function getPDF() {
+  const pdfRef = doc(db, "Applicants", "hKvpTUv1QqJLRHh44EM2")
+  const docSnap = await getDoc(pdfRef)
+  console.log(docSnap.data())
 }
 
 // Create a new item

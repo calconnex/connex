@@ -10,15 +10,15 @@ const ApplicantDetails = () => {
   const { data: application, error, isPending } = useFetch('http://localhost:8000/applicants/' + id);
 
   return (
-    <div class="overall">
+    <div className="overall">
       { isPending && <div>Loading...</div> }
       { error && <div>{ error }</div> }
       <Navbar/>
       { application && (
         <article>
-          <div class="left">
-            <div class="resume">
-              {/* <Pdf /> */}
+          <div className="left">
+            <div className="resume">
+              <Pdf />
             </div>
             <div className="scoring">
               <button>
@@ -26,20 +26,20 @@ const ApplicantDetails = () => {
               </button>
             </div>
           </div>
-          <div class="right">
-            <div class="top">
-              <div class="ProfileGroup">
-                <div class="ProfilePic">              
+          <div className="right">
+            <div className="top">
+              <div className="ProfileGroup">
+                <div className="ProfilePic">              
                 <img
                     style={{ maxWidth: 250 }}
                     src="https://media.istockphoto.com/id/1262964438/photo/success-happens-the-moment-you-believe-it-will.jpg?s=612x612&w=0&k=20&c=tpjbR4aaaiB43sneEWgatyFIQOmN3E-3nB5CBE5Idyg="
                     alt="Headshot"
                   />
                 </div>
-                <div class="ContactInfo">
+                <div className="ContactInfo">
                   Contact Information
                 </div>
-                <div class="ContactInfo">
+                <div className="ContactInfo">
                   Name: {application.firstName} {application.lastName}
                   <br />
                   Major: {application.major}
@@ -47,20 +47,20 @@ const ApplicantDetails = () => {
                   Year: {application.year}
                 </div>
               </div>
-              <div class="OtherGroup">
-                <div class="ReferralGroup">
-                  <div class="ReferralTitle">
+              <div className="OtherGroup">
+                <div className="ReferralGroup">
+                  <div className="ReferralTitle">
                     Referrals:
                   </div>
-                  <div class="ReferralBody">
+                  <div className="ReferralBody">
                     referral text
                   </div>
                 </div>
-                <div class="AttachmentGroup">
-                  <div class="AttachmentTitle">
+                <div className="AttachmentGroup">
+                  <div className="AttachmentTitle">
                       Attachments:
                   </div>
-                  <div class="AttachmentBody">
+                  <div className="AttachmentBody">
                     attachment text
                   </div>
                 </div>
@@ -68,15 +68,15 @@ const ApplicantDetails = () => {
             </div>
 
             <div className="EssayGroup">
-              <div class="Essay1Group">
+              <div className="Essay1Group">
                       Essay 1 Prompt:
-                <div class="middle">
+                <div className="middle">
                   { application.essay1 }
                 </div>
               </div>
-              <div class="Essay2Group">
+              <div className="Essay2Group">
                 Essay 2 Prompt:
-                <div class="bottom">
+                <div className="bottom">
                   { application.essay2 }
                 </div>
               </div>
