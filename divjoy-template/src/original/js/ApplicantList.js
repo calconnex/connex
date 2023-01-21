@@ -4,16 +4,9 @@ import { useState } from "react";
 import FilterPopup from "./FilterPopup";
 import ManagePopup from "./ManagePopup";
 import ExportPopup from "./ExportPopup";
-import { useAllApplicants } from "../../util/db";
 
-const ApplicantList = ({ applicants }) => {
-
-  // maps the name to its values
-  const [column, setColumn] = useState([
-    { heading: 'Name', value: 'name', display: true, key: 1},
-    { heading: 'Major', value: 'major', display: true, key: 2},
-    { heading: 'Year', value: 'year', display: true, key: 3}
-  ])
+const ApplicantList = ({ applicants, column }) => {
+  console.log(applicants)
 
   // Contains information to show the Filter Columns Popup
   const [filterOpen, setFilterOpen] = useState(false);

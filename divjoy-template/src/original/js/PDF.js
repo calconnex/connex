@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import { Worker, Viewer } from '@react-pdf-viewer/core'
-import { getPDF } from "../../util/db";
+import { useOneApplicant } from "../../util/db";
 
 
-const Pdf = () => {
-    const person = getPDF()
+const Pdf = ({id}) => {
+    const applicant = useOneApplicant(parseInt(id));
+    const appData = applicant.data[0]
+    const resume = appData.resume[0]
+    const url = resume.downloadURL
 
     return ( 
-        <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
-            <Viewer fileUrl={person}></Viewer>
-        </Worker>
+        url && (<Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
+            <Viewer fileUrl={url}></Viewer>
+        </Worker>)
     );
 }
  

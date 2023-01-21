@@ -1,19 +1,15 @@
 import ApplicantList from "./ApplicantList";
-// import useFetch from "./useFetch";
-import data from "../data/db.json";
 import Navbar from "./Navbar";
-import { useAllApplicants } from "../../util/db";
+import { useAllApplicants, useAllColumns } from "../../util/db";
 
 const Home = () => {
   const newData = useAllApplicants();
+  const column = useAllColumns();
 
   return (
     <div className="home">
       <Navbar/>
-      {/* { error && <div>{ error }</div> }
-      { isPending && <div>Loading...</div> } */}
-      { newData.data && <ApplicantList applicants={newData.data} /> }
-      {/* { data.applicants && <ApplicantList applicants={data.applicants} /> } */}
+      { newData.data && column.data && <ApplicantList applicants={newData.data} column={column.data}/> }
     </div>
   );
 }

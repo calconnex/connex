@@ -13,7 +13,6 @@ import {
   where,
   orderBy,
   getDoc,
-  getDocs,
   setDoc,
   updateDoc,
   addDoc,
@@ -98,13 +97,39 @@ export function useItemsByOwner(owner) {
   );
 }
 
+// Gets all applicants
 export function useAllApplicants() {
   return useQuery(
     ["Applicants"],
     createQuery(() =>
       query(
+        collection(db, "Applicants")
+      )
+    )
+  );
+}
+
+// Gets one applicant based on the id
+export function useOneApplicant(id) {
+  return useQuery(
+    ["Applicants"],
+    createQuery(() =>
+      query(
         collection(db, "Applicants"),
-        orderBy("id", "desc")
+        where("id", "==", id)
+      )
+    )
+  );
+}
+
+
+// Gets all columns
+export function useAllColumns() {
+  return useQuery(
+    ["Columns"],
+    createQuery(() =>
+      query(
+        collection(db, "Columns")
       )
     )
   );

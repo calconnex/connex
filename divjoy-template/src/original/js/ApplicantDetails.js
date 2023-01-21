@@ -4,21 +4,22 @@ import React from "react";
 import Pdf from "./PDF";
 import "../css/ApplicantDetails.css";
 import Navbar from "./Navbar";
+import { useOneApplicant } from "../../util/db";
+
 
 const ApplicantDetails = () => {
   const { id } = useParams();
-  const { data: application, error, isPending } = useFetch('http://localhost:8000/applicants/' + id);
+  const applicant = useOneApplicant(parseInt(id));
+  const appData = applicant.data[0]
 
   return (
     <div className="overall">
-      { isPending && <div>Loading...</div> }
-      { error && <div>{ error }</div> }
       <Navbar/>
-      { application && (
+      { appData && (
         <article>
           <div className="left">
             <div className="resume">
-              <Pdf />
+              <Pdf id={parseInt(id)}/>
             </div>
             <div className="scoring">
               <button>
@@ -40,11 +41,11 @@ const ApplicantDetails = () => {
                   Contact Information
                 </div>
                 <div className="ContactInfo">
-                  Name: {application.firstName} {application.lastName}
+                  Name: {appData.name}
                   <br />
-                  Major: {application.major}
+                  Major: {appData.major}
                   <br />
-                  Year: {application.year}
+                  Year: {appData.year}
                 </div>
               </div>
               <div className="OtherGroup">
@@ -71,13 +72,13 @@ const ApplicantDetails = () => {
               <div className="Essay1Group">
                       Essay 1 Prompt:
                 <div className="middle">
-                  { application.essay1 }
+                  { appData.essay1 }
                 </div>
               </div>
               <div className="Essay2Group">
                 Essay 2 Prompt:
                 <div className="bottom">
-                  { application.essay2 }
+                  { appData.essay2 }
                 </div>
               </div>
             </div>
