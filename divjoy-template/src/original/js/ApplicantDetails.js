@@ -21,11 +21,6 @@ const ApplicantDetails = () => {
             <div className="resume">
               <Pdf id={parseInt(id)}/>
             </div>
-            <div className="scoring">
-              <button>
-                Score Resume
-              </button>
-            </div>
           </div>
           <div className="right">
             <div className="top">

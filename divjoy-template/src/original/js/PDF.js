@@ -10,9 +10,12 @@ const Pdf = ({id}) => {
     const url = resume.downloadURL
 
     return ( 
-        url && (<Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
-            <Viewer fileUrl={url}></Viewer>
-        </Worker>)
+        // url && (<Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
+        //     <Viewer fileUrl={url}></Viewer>
+        // </Worker>)
+        url && (<object data={url} type="application/pdf" width="100%" height="1000px">
+            <a href={url}></a>
+        </object>)
     );
 }
  
