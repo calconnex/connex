@@ -5,8 +5,11 @@ import FilterPopup from "./FilterPopup";
 import ManagePopup from "./ManagePopup";
 import ExportPopup from "./ExportPopup";
 
+
 const ApplicantList = ({ applicants, column }) => {
-  console.log(applicants)
+
+
+  
 
   // Contains information to show the Filter Columns Popup
   const [filterOpen, setFilterOpen] = useState(false);

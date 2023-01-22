@@ -18,20 +18,17 @@ const Navbar = () => {
 
       <div className="links">
         <div className="container">
-          <Link to="/" onClick={(event) => {auth.signout()}}>Sign Out</Link>
-        </div>
-        <div className="container">
           <img src={home} alt="home icon" className="icons"/>
           <Link to="/home">Home</Link>
         </div>
         <div className="container">
-          <img src={compare} alt="home icon" className="icons"/>
+          <img src={compare} alt="compare icon" className="icons"/>
           <Link to="/compare">Compare</Link>
         </div>
         <div className="container">
-          <img src={setting} alt="home icon" className="icons"/>
-          <Link to="/nopath">Settings</Link>
+          <Link to="/" onClick={(event) => {auth.signout()}}>Sign Out</Link>
         </div>
+
       </div>
     </nav>
   );

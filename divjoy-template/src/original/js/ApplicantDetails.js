@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import useFetch from "./useFetch";
 import React from "react";
 import Pdf from "./PDF";
 import "../css/ApplicantDetails.css";
@@ -11,6 +10,8 @@ const ApplicantDetails = () => {
   const { id } = useParams();
   const applicant = useOneApplicant(parseInt(id));
   const appData = applicant.data[0]
+  const photo = appData.photo[0]
+  const photoURL = photo.downloadURL
 
   return (
     <div className="overall">
@@ -25,31 +26,25 @@ const ApplicantDetails = () => {
           <div className="right">
             <div className="top">
               <div className="ProfileGroup">
-                <div className="ProfilePic">              
                 <img
-                    style={{ maxWidth: 250 }}
-                    src="https://media.istockphoto.com/id/1262964438/photo/success-happens-the-moment-you-believe-it-will.jpg?s=612x612&w=0&k=20&c=tpjbR4aaaiB43sneEWgatyFIQOmN3E-3nB5CBE5Idyg="
-                    alt="Headshot"
-                  />
-                </div>
+                  src={photoURL}
+                  alt="Headshot"
+                  className="photo"
+                />
                 <div className="ContactInfo">
-                  Contact Information
-                </div>
-                <div className="ContactInfo">
-                  Name: {appData.name}
-                  <br />
-                  Major: {appData.major}
-                  <br />
-                  Year: {appData.year}
+                  <div className="contactTitle">Contact Information</div>
+                  <div>Name: {appData.name}</div>
+                  <div>Major: {appData.major}</div>
+                  <div>Year: {appData.year}</div>
                 </div>
               </div>
-              <div className="OtherGroup">
+              <div className="bibliography">
                 <div className="ReferralGroup">
                   <div className="ReferralTitle">
-                    Referrals:
+                    URM Info
                   </div>
                   <div className="ReferralBody">
-                    referral text
+                    DEI Info
                   </div>
                 </div>
                 <div className="AttachmentGroup">
