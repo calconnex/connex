@@ -1,12 +1,20 @@
 import React from 'react';
 import "../css/ManagePopup.css";
+import { useAllApplicants, useAllColumns } from "../../util/db";
+
 
   
-const ExportPopup = (props, {handleClose, column, applicants}) => {
+const ExportPopup = (props) => {
 
+    const newData = useAllApplicants();
+    const column = useAllColumns();    
+    console.log(newData.data, column.data)
    function createCSV(){
-    let data = props.applicants;
-    let csvContent = "ID,First Name,Last Name,Name,Major,Year,Essay1,Essay2\n"
+    let data = newData.data;
+    let csvContent = ""
+    column.forEach(element =>{
+        let row = element.heading && element.display
+        csvContent += row    })
     data.forEach(element => {
         let row = element.id + "," + element.firstName + "," + element.lastName + "," + element.name + "," + element.major + "," + element.year  + "," + element.essay1.toString().replaceAll(/[\r\n]/gm, "").replaceAll(/,/gm,"")  + "," + element.essay2.toString().toString().replaceAll(/[\r\n]/gm, "").replaceAll(/,/gm,"")+ "\n"
         csvContent += row;

@@ -41,7 +41,7 @@ const ApplicantDetails = () => {
               <div className="bibliography">
                 <div className="ReferralGroup">
                   <div className="ReferralTitle">
-                    URM Info
+                    Demographic Info
                   </div>
                   <div className="ReferralBody">
                     DEI Info
@@ -71,6 +71,15 @@ const ApplicantDetails = () => {
                   { appData.essay2 }
                 </div>
               </div>
+              <div class = "AcceptorNah"> 
+                <form>
+                  <span>
+                  <button> Accept</button>
+                  <button> Reject</button>
+                  </span>
+                </form>
+              </div>
+
             </div>
           </div>
         </article>
