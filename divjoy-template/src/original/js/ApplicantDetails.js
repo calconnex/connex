@@ -3,7 +3,7 @@ import React from "react";
 import Pdf from "./PDF";
 import "../css/ApplicantDetails.css";
 import Navbar from "./Navbar";
-import { useOneApplicant } from "../../util/db";
+import { useOneApplicant, createItem } from "../../util/db";
 
 
 const ApplicantDetails = () => {
@@ -72,12 +72,7 @@ const ApplicantDetails = () => {
                 </div>
               </div>
               <div class = "AcceptorNah"> 
-                <form>
-                  <span>
-                  <button> Accept</button>
-                  <button> Reject</button>
-                  </span>
-                </form>
+                <button onClick={() => createItem(appData) && alert("Candidate Accepted")}> Accept</button>
               </div>
 
             </div>

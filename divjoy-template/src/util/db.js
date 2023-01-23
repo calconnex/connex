@@ -122,6 +122,10 @@ export function useOneApplicant(id) {
   );
 }
 
+// export function WriteApplicant(){
+//   return use qw
+// }
+
 
 // Gets all columns
 export function useAllColumns() {
@@ -143,7 +147,7 @@ export async function getPDF() {
 
 // Create a new item
 export function createItem(data) {
-  return addDoc(collection(db, "items"), {
+  return addDoc(collection(db, "Acceptances"), {
     ...data,
     createdAt: serverTimestamp(),
   });
