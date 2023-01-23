@@ -49,7 +49,7 @@ const ApplicantList = ({ applicants }) => {
       </div>
       <TableRotated data={applicants} column={row} />
       {/* Holds the popups */}
-      {manageApplicants && <ChangePopup handleClose={toggleApplicants}/>}
+      {manageApplicants && <ChangePopup handleClose={toggleApplicants} data={applicants}/>}
       {manageOpen && <ManagePopup handleClose={toggleManage} data={row}/>}
       {exportOpen && <ExportPopup handleClose={toggleExport} applicants={applicants}/>}
     </div>

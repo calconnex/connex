@@ -109,6 +109,19 @@ export function useAllApplicants() {
   );
 }
 
+// Gets multiple applicants based on the id
+export function useMultipleApplicants(ids) {
+  return useQuery(
+    ["Applicants"],
+    createQuery(() =>
+      query(
+        collection(db, "Applicants"),
+        where("id", "in", ids)
+      )
+    )
+  );
+}
+
 // Gets one applicant based on the id
 export function useOneApplicant(id) {
   return useQuery(
