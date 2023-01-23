@@ -26,15 +26,13 @@ const ApplicantDetails = () => {
   const AcceptanceHandler = () => {
       setAccepted(true);
       setRejected(false);
-      createItem(appData);
-      appData.push(accepted)
-
+      createItem(appData, accepted);
   }
 
   const RejectHandler = () => {
     setAccepted(false)
     setRejected(true);
-    appData.push(accepted);
+    createItem(appData, accepted);
   }
   
   const handleClose = () => {

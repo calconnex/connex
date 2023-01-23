@@ -19,6 +19,7 @@ import {
   deleteDoc,
   serverTimestamp,
 } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 import { firebaseApp } from "./firebase";
 
 // Initialize Firestore
@@ -108,7 +109,7 @@ export function useAllApplicants() {
     )
   );
 }
-//Gets all acceptances 
+//Gets all acceptances
 export function useAllAcceptances() {
   return useQuery(
     ["Acceptances"],
@@ -156,11 +157,16 @@ export async function getPDF() {
   console.log(docSnap.data())
 }
 
-// Create a new item
-export function createItem(data) {
+// Create a new acceptances item
+export function createItem(data, bool) {
+  const user = getAuth().currentUser;
+  console.log(user)
   return addDoc(collection(db, "Acceptances"), {
     ...data,
+    accpeted: bool,
     createdAt: serverTimestamp(),
+    acceptedBy : user.displayName,
+    acceptedEmail : user.email
   });
 }
 
