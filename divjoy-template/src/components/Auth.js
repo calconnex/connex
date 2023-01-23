@@ -36,7 +36,7 @@ function Auth(props) {
         <>
           {props.providers && props.providers.length && (
             <>
-              <Box textAlign="center" fontSize={12} my={2}>
+              {/* <Box textAlign="center" fontSize={12} my={2}>
                 OR
               </Box>
               <AuthSocial
@@ -50,7 +50,7 @@ function Auth(props) {
                     message: message,
                   });
                 }}
-              />
+              /> */}
             </>
           )}
         </>

@@ -29,7 +29,7 @@ function AuthFooter(props) {
     <div className={classes.root}>
       {props.type === "signup" && (
         <>
-          {props.showAgreement && (
+          {/* {props.showAgreement && (
             <Box mb={2}>
               By signing up, you are agreeing to our{" "}
               <LinkMui component={Link} to={props.termsPath}>
@@ -41,7 +41,7 @@ function AuthFooter(props) {
               </LinkMui>
               .
             </Box>
-          )}
+          )} */}
 
           {props.signinText}
           <span className={classes.spacerSmall} />

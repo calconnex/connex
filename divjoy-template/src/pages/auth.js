@@ -10,7 +10,7 @@ function AuthPage(props) {
     <>
       <Meta title="Auth" />
       <AuthSection
-        bgColor="default"
+        bgColor="none"
         size="medium"
         bgImage=""
         bgImageOpacity={1}

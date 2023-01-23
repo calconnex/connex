@@ -4,7 +4,8 @@ import Pdf from "./PDF";
 import "../css/ApplicantDetails.css";
 import Navbar from "./Navbar";
 import { useOneApplicant } from "../../util/db";
-
+import { useAuth } from "../../util/auth";
+import NotFound from "./NotFound";
 
 const ApplicantDetails = () => {
   const { id } = useParams();
@@ -12,9 +13,10 @@ const ApplicantDetails = () => {
   const appData = applicant.data[0]
   const photo = appData.photo[0]
   const photoURL = photo.downloadURL
+  const auth = useAuth();
 
   return (
-    <div className="overall">
+    auth.user ? (<div className="overall">
       <Navbar/>
       { appData && (
         <article>
@@ -86,6 +88,7 @@ const ApplicantDetails = () => {
         
         )}   
         </div>  
+    ) : (<NotFound/>)
   );
 }
  
