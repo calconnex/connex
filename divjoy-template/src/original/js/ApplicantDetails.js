@@ -107,11 +107,22 @@ const ApplicantDetails = () => {
                 </DialogContent>
                 <DialogActions>
                   <Link to = '/home'>
-                  <Button onClick={handleClose} autoFocus> Close</Button>
+                  <Button onClick={handleClose}> Close</Button>
                   </Link>
                 </DialogActions>
                 </Dialog>
                 <Button variant = "outlined" onClick = {RejectHandler} style={{ backgroundColor: rejected!==accepted ? "white" : "gray" }}>Reject</Button>
+                <Dialog open = {rejected}  aria-labelledby="ApplicantAccepted" >
+                <DialogTitle id = "ApplicantAccepted">Your Decision</DialogTitle>
+                <DialogContent>
+                <DialogContentText>Applicant Has Been Rejected</DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Link to = '/home'>
+                  <Button onClick={handleClose} > Close</Button>
+                  </Link>
+                </DialogActions>
+                </Dialog>
               </div>
 
             </div>
