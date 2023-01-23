@@ -1,9 +1,16 @@
 import { useParams } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import Pdf from "./PDF";
 import "../css/ApplicantDetails.css";
 import Navbar from "./Navbar";
 import { useOneApplicant, createItem } from "../../util/db";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import { Link } from 'react-router-dom';
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import Button from "@material-ui/core/Button";
 
 
 const ApplicantDetails = () => {
@@ -13,6 +20,26 @@ const ApplicantDetails = () => {
   const photo = appData.photo[0]
   const photoURL = photo.downloadURL
 
+  const [accepted, setAccepted] = useState(false)
+  const [rejected, setRejected] = useState(false)
+
+  const AcceptanceHandler = () => {
+      setAccepted(true);
+      setRejected(false);
+      createItem(appData);
+      appData.push(accepted)
+
+  }
+
+  const RejectHandler = () => {
+    setAccepted(false)
+    setRejected(true);
+    appData.push(accepted);
+  }
+  
+  const handleClose = () => {
+    setAccepted(false);
+  }
   return (
     <div className="overall">
       <Navbar/>
@@ -72,7 +99,19 @@ const ApplicantDetails = () => {
                 </div>
               </div>
               <div class = "AcceptorNah"> 
-                <button onClick={() => createItem(appData) && alert("Candidate Accepted")}> Accept</button>
+                <Button variant = "outlined" onClick={AcceptanceHandler} style={{backgroundColor: accepted? "gray" : "white"}}> Accept</Button>
+                <Dialog open = {accepted}  aria-labelledby="ApplicantAccepted" >
+                <DialogTitle id = "ApplicantAccepted">Your Decision</DialogTitle>
+                <DialogContent>
+                <DialogContentText>Applicant Has Been Accepted</DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Link to = '/home'>
+                  <Button onClick={handleClose} autoFocus> Close</Button>
+                  </Link>
+                </DialogActions>
+                </Dialog>
+                <Button variant = "outlined" onClick = {RejectHandler} style={{ backgroundColor: rejected!==accepted ? "white" : "gray" }}>Reject</Button>
               </div>
 
             </div>

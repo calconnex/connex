@@ -108,6 +108,17 @@ export function useAllApplicants() {
     )
   );
 }
+//Gets all acceptances 
+export function useAllAcceptances() {
+  return useQuery(
+    ["Acceptances"],
+    createQuery(() =>
+      query(
+        collection(db, "Acceptances")
+      )
+    )
+  );
+}
 
 // Gets one applicant based on the id
 export function useOneApplicant(id) {
