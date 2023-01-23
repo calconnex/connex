@@ -8,7 +8,7 @@ import ExportPopup from "./ExportPopup";
 
 const ApplicantList = ({ applicants, column }) => {
 
-
+  
   
 
   // Contains information to show the Filter Columns Popup
