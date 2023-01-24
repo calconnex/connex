@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Pdf from "./PDF";
 import "../css/ApplicantDetails.css";
 import Navbar from "./Navbar";
-import { useOneApplicant, createItem } from "../../util/db";
+import { useOneApplicant, createItem, deleteAccept } from "../../util/db";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -23,14 +23,25 @@ const ApplicantDetails = () => {
   const [accepted, setAccepted] = useState(false)
   const [rejected, setRejected] = useState(false)
 
-  const AcceptanceHandler = () => {
+  useEffect(() => {
+    if (accepted) {
+      createItem(appData, accepted)
+      setAccepted(false)
+    } else if(rejected) {
+      
+      setRejected(false)
+      deleteAccept(appData.id, rejected)
+    }
+  }, [accepted])
+
+  const AcceptanceHandler = async () => {
       setAccepted(true);
       setRejected(false);
       createItem(appData, accepted);
   }
 
   const RejectHandler = () => {
-    setAccepted(false)
+    setAccepted(false);
     setRejected(true);
     createItem(appData, accepted);
   }
@@ -97,7 +108,7 @@ const ApplicantDetails = () => {
                 </div>
               </div>
               <div class = "AcceptorNah"> 
-                <Button variant = "outlined" onClick={AcceptanceHandler} style={{backgroundColor: accepted? "gray" : "white"}}> Accept</Button>
+                <Button variant = "outlined" onClick={() => setAccepted(true)} style={{backgroundColor: accepted? "gray" : "white"}}> Accept</Button>
                 <Dialog open = {accepted}  aria-labelledby="ApplicantAccepted" >
                 <DialogTitle id = "ApplicantAccepted">Your Decision</DialogTitle>
                 <DialogContent>

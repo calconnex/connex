@@ -22,6 +22,7 @@ import {
 import { getAuth } from "firebase/auth";
 import { firebaseApp } from "./firebase";
 
+
 // Initialize Firestore
 const db = getFirestore(firebaseApp);
 
@@ -160,7 +161,7 @@ export async function getPDF() {
 // Create a new acceptances item
 export function createItem(data, bool) {
   const user = getAuth().currentUser;
-  console.log(user)
+  setDoc(doc(db,"Applicants",data.id), {accepted: bool});
   return addDoc(collection(db, "Acceptances"), {
     ...data,
     accpeted: bool,
@@ -178,6 +179,20 @@ export function updateItem(id, data) {
 // Delete an item
 export function deleteItem(id) {
   return deleteDoc(doc(db, "items", id));
+}
+
+//Delete an item from acceptances
+export function deleteAccept(id, bool) {
+const user = getAuth().currentUser;
+const comp = doc(db, "Acceptances", id); 
+  if (comp.exists){
+  if (user.email === doc(db, "Acceptances", id).acceptedBy){
+    setDoc(doc(db, "Applicants",id), {accepted: bool})
+    return deleteDoc(doc(db, "Acceptances", id));
+  } 
+} else {
+  return setDoc(doc(db, "Applicants",id), {accepted: bool});
+}
 }
 
 /**** HELPERS ****/
