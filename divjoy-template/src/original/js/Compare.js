@@ -1,6 +1,6 @@
 import ApplicantCompare from "./ApplicantCompare";
 // import useFetch from "./useFetch";
-import data from "../data/db.json";
+//import data from "../data/db.json";
 import Navbar from "./Navbar";
 import { useAllApplicants } from "../../util/db";
 import { useAuth } from "../../util/auth";
@@ -16,7 +16,7 @@ const Compare = () => {
       <Navbar/>
       {/* { error && <div>{ error }</div> }
       { isPending && <div>Loading...</div> } */}
-      { data.applicants && <ApplicantCompare applicants={newData.data} /> }
+      { newData.data && <ApplicantCompare applicants={newData.data} /> }
     </div>
     ) : (<NotFound/>)
   );
