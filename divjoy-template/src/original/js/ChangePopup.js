@@ -1,51 +1,54 @@
 import React from "react";
 import "../css/ChangePopup.css";
-import Dropdown from "./Dropdown";
 
+const ChangePopup = ({handleClose, data, toggleCurrApplicants}) => {
 
-const ChangePopup = ({handleClose, data}) => {
-
+    function updateApplicants(handleClose, toggleCurrApplicants) {
+        const oneName = document.getElementById("appOne").value;
+        const twoName = document.getElementById("appTwo").value;
+        const threeName = document.getElementById("appThree").value;
+        const one = data.find(item => item.name === oneName);
+        const two = data.find(item => item.name === twoName);
+        const three = data.find(item => item.name === threeName);
+        toggleCurrApplicants([one, two, three]);
+        handleClose();
+    }
+ 
     return (
         <div className="popup-box">
             <div className="box">
                 <span className="close-icon" onClick={handleClose}>x</span>
                 <div className="title">Change Candidates</div>
-                <br></br>
-                <hr></hr>
-                <br></br>
-
-                <label>
-                    <br></br>
-                    <h4>Applicant 1:</h4>
-                    <br></br>
-                    <select>
-                    {data.map((item) => 
-                    <option value={item.id}>{item.name}</option>
-                    )}
+                <div className="dropdown">
+                    <div className="title">
+                        Applicant One
+                    </div>
+                    <select name="selectList" id="appOne">
+                        <option value="none">--select one--</option>
+                        {data.map((item) => <option value={item.name}>{item.name}</option>)}
                     </select>
-                </label>
-                <br></br>
-                <label>
-                    <br></br>
-                    <h4>Applicant 2:</h4>
-                    <br></br>
-                    <select>
-                    {data.map((item) => 
-                    <option value={item.id}>{item.name}</option>
-                    )}
+                </div>
+                <div className="dropdown">
+                    <div className="title">
+                        Applicant Two
+                    </div>
+                    <select name="selectList" id="appTwo">
+                        <option value="none">--select one--</option>
+                        {data.map((item) => <option value={item.name}>{item.name}</option>)}
                     </select>
-                </label>
-                <br></br>
-                <label>
-                    <br></br>
-                    <h4>Applicant 3:</h4>
-                    <br></br>
-                    <select>
-                    {data.map((item) => 
-                    <option value={item.id}>{item.name}</option>
-                    )}
+                </div>
+                <div className="dropdown">
+                    <div className="title">
+                        Applicant Three
+                    </div>
+                    <select name="selectList" id="appThree">
+                        <option value="none">--select one--</option>
+                        {data.map((item) => <option value={item.name}>{item.name}</option>)}
                     </select>
-                </label>
+                </div>
+                <button className="save" onClick={() => updateApplicants(handleClose, toggleCurrApplicants)}>
+                    Save Changes
+                </button>
             </div>
         </div>
     );

@@ -14,6 +14,11 @@ const ApplicantList = ({ applicants }) => {
     { heading: 'Year', value: 'year', display: true, key: 3}
   ])
 
+  const [currApplicants, setCurrApplicants] = useState(applicants.slice(0,3))
+  const toggleCurrApplicants = (newApps) => {
+    setCurrApplicants(newApps);
+  }
+
   // Contains information to show the Manage Applicants Popup
   const [manageApplicants, setManageApplicants] = useState(false);
   const toggleApplicants = () => {
@@ -47,9 +52,9 @@ const ApplicantList = ({ applicants }) => {
             Export Files
         </button>
       </div>
-      <TableRotated data={applicants} column={row} />
+      <TableRotated data={currApplicants} column={row} />
       {/* Holds the popups */}
-      {manageApplicants && <ChangePopup handleClose={toggleApplicants} data={applicants}/>}
+      {manageApplicants && <ChangePopup handleClose={toggleApplicants} data={applicants} toggleCurrApplicants={toggleCurrApplicants} currApplicants={currApplicants}/>}
       {manageOpen && <ManagePopup handleClose={toggleManage} data={row}/>}
       {exportOpen && <ExportPopup handleClose={toggleExport} applicants={applicants}/>}
     </div>

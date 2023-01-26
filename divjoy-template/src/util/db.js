@@ -122,6 +122,19 @@ export function useOneApplicant(id) {
   );
 }
 
+// Gets one applicant based on the name
+export function useApplicantName(name) {
+  return useQuery(
+    ["Applicants"],
+    createQuery(() =>
+      query(
+        collection(db, "Applicants"),
+        where("name", "==", name)
+      )
+    )
+  );
+}
+
 // export function WriteApplicant(){
 //   return use qw
 // }
