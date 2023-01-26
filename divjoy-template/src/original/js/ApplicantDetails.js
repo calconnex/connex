@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Pdf from "./PDF";
 import "../css/ApplicantDetails.css";
 import Navbar from "./Navbar";
-import { useOneApplicant, createItem, deleteAccept } from "../../util/db";
+import { useOneApplicant, createItem, dontAccept} from "../../util/db";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
+import { connectFirestoreEmulator } from "firebase/firestore";
 
 
 const ApplicantDetails = () => {
@@ -25,26 +26,29 @@ const ApplicantDetails = () => {
 
   useEffect(() => {
     if (accepted) {
-      createItem(appData, accepted)
-      setAccepted(false)
-    } else if(rejected) {
-      
-      setRejected(false)
-      deleteAccept(appData.id, rejected)
-    }
-  }, [accepted])
-
-  const AcceptanceHandler = async () => {
-      setAccepted(true);
-      setRejected(false);
+      console.log(appData)
       createItem(appData, accepted);
-  }
+      // setAccepted(false)
+    } else if(rejected) {
+      console.log("Item being unaccepted ");
+      dontAccept(appData.id, accepted)
+      // setRejected(false)
+    }
+  }, [accepted, rejected])
 
-  const RejectHandler = () => {
-    setAccepted(false);
-    setRejected(true);
-    createItem(appData, accepted);
-  }
+  // const AcceptanceHandler =  async () => {
+  //     setAccepted(true);
+  //     setRejected(false);
+  //     if (accepted) {
+  //       await createItem(appData, true);
+  //     }
+  // }
+
+  // const RejectHandler = () => {
+  //   setAccepted(false);
+  //   setRejected(true);
+  //   createItem(appData, accepted);
+  // }
   
   const handleClose = () => {
     setAccepted(false);
@@ -55,7 +59,7 @@ const ApplicantDetails = () => {
       { appData && (
         <article>
           <div className="left">
-            <div className="resume">
+            <div className="resume"> 
               <Pdf id={parseInt(id)}/>
             </div>
           </div>
@@ -108,7 +112,7 @@ const ApplicantDetails = () => {
                 </div>
               </div>
               <div class = "AcceptorNah"> 
-                <Button variant = "outlined" onClick={() => setAccepted(true)} style={{backgroundColor: accepted? "gray" : "white"}}> Accept</Button>
+                <Button variant = "outlined" onClick={() => {setAccepted(true); setRejected(false);}} style={{backgroundColor: accepted? "gray" : "white"}}> Accept</Button>
                 <Dialog open = {accepted}  aria-labelledby="ApplicantAccepted" >
                 <DialogTitle id = "ApplicantAccepted">Your Decision</DialogTitle>
                 <DialogContent>
@@ -120,7 +124,7 @@ const ApplicantDetails = () => {
                   </Link>
                 </DialogActions>
                 </Dialog>
-                <Button variant = "outlined" onClick = {RejectHandler} style={{ backgroundColor: rejected!==accepted ? "white" : "gray" }}>Reject</Button>
+                <Button variant = "outlined" onClick = {() => {setRejected(true); setAccepted(false);}} style={{ backgroundColor: rejected!==accepted ? "white" : "gray" }}>Reject</Button>
                 <Dialog open = {rejected}  aria-labelledby="ApplicantAccepted" >
                 <DialogTitle id = "ApplicantAccepted">Your Decision</DialogTitle>
                 <DialogContent>

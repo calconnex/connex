@@ -21,7 +21,7 @@ import {
 } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { firebaseApp } from "./firebase";
-
+import { useEffect } from "react";
 
 // Initialize Firestore
 const db = getFirestore(firebaseApp);
@@ -158,14 +158,13 @@ export async function getPDF() {
   console.log(docSnap.data())
 }
 
-// Create a new acceptances item
+// Create a new acceptances item and updates applicants collection
 export function createItem(data, bool) {
   const user = getAuth().currentUser;
-  setDoc(doc(db,"Applicants",data.id), {accepted: bool});
   return addDoc(collection(db, "Acceptances"), {
     ...data,
-    accpeted: bool,
     createdAt: serverTimestamp(),
+    accepted: bool,
     acceptedBy : user.displayName,
     acceptedEmail : user.email
   });
@@ -181,18 +180,22 @@ export function deleteItem(id) {
   return deleteDoc(doc(db, "items", id));
 }
 
-//Delete an item from acceptances
-export function deleteAccept(id, bool) {
-const user = getAuth().currentUser;
-const comp = doc(db, "Acceptances", id); 
-  if (comp.exists){
-  if (user.email === doc(db, "Acceptances", id).acceptedBy){
-    setDoc(doc(db, "Applicants",id), {accepted: bool})
-    return deleteDoc(doc(db, "Acceptances", id));
-  } 
-} else {
-  return setDoc(doc(db, "Applicants",id), {accepted: bool});
-}
+//Delete an item from acceptances collection and updates item status in applicants collection
+export async function dontAccept(bool, data) {
+  console.log("In dontAccept Item")
+  const col = db.collection("Acceptances")
+  const querySnapshot = await col.where("id", "==", data.id).where("acceptedEmail", "==", data.acceptedEmail).where("accepted", "!=", bool).get()
+  if (querySnapshot.exists){
+    return setDoc(doc(db, "Acceptances", querySnapshot.id), {accepeted: bool}, {merge:true});
+  } else{
+    createItem(data, bool)
+  }
+  // const user = getAuth().currentUser;
+  // if (user.email === doc(db, "Acceptances", id).acceptedEmail){
+  //     
+  // } else {
+  //   createItem(data, bool)
+  // }
 }
 
 /**** HELPERS ****/

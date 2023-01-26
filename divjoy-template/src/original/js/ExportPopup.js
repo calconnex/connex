@@ -9,7 +9,6 @@ const ExportPopup = (props) => {
 
     const newData = useAllApplicants();
     const newAccData = useAllAcceptances();
-    console.log(newAccData);
     const column = useAllColumns();  
    function createApplicantsCSV(){
     let data = newData.data;
