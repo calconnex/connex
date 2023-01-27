@@ -21,6 +21,15 @@ const ApplicantDetails = () => {
   const appData = applicant.data[0]
   const photo = appData.photo[0]
   const photoURL = photo.downloadURL
+  const auth = useAuth()
+  const [accepted, setAccepted] = useState(false)
+  const [rejected, setRejected] = useState(false)
+
+
+  
+  const handleClose = () => {
+    setAccepted(false);
+  }
 
   return (
     auth.user ? (<div className="overall">
@@ -29,7 +38,7 @@ const ApplicantDetails = () => {
         <article>
           <div className="left">
             <div className="resume"> 
-              <Pdf id={parseInt(id)}/>
+              {/* <Pdf id={parseInt(id)}/> */}
             </div>
           </div>
           <div className="right">
@@ -69,13 +78,13 @@ const ApplicantDetails = () => {
 
             <div className="EssayGroup">
               <div className="Essay1Group">
-                      Essay 1 Prompt:
+                      Essay 1:
                 <div className="middle">
                   { appData.essay1 }
                 </div>
               </div>
               <div className="Essay2Group">
-                Essay 2 Prompt:
+                Additional Comments:
                 <div className="bottom">
                   { appData.essay2 }
                 </div>
