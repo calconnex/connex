@@ -3,6 +3,7 @@ import { useOneApplicant } from "../../util/db";
 
 const Pdf = ({id}) => {
     const applicant = useOneApplicant(parseInt(id));
+    console.log(applicant);
     const appData = applicant.data[0]
     const resume = appData.resume[0]
     const url = resume.downloadURL

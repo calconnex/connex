@@ -109,13 +109,25 @@ export function useAllApplicants() {
   );
 }
 
+// Gets all URM applicants
+export function useAllURMApplicants() {
+  return useQuery(
+    ["URMApplicants"],
+    createQuery(() =>
+      query(
+        collection(db, "URMApplicants")
+      )
+    )
+  );
+}
+
 // Gets one applicant based on the id
 export function useOneApplicant(id) {
   return useQuery(
-    ["Applicants"],
+    ["URMApplicants"],
     createQuery(() =>
       query(
-        collection(db, "Applicants"),
+        collection(db, "URMApplicants"),
         where("id", "==", id)
       )
     )
@@ -147,6 +159,31 @@ export function useAllColumns() {
     createQuery(() =>
       query(
         collection(db, "Columns")
+      )
+    )
+  );
+}
+
+// Gets all URMcolumns
+export function useAllURMColumns() {
+  return useQuery(
+    ["URMColumns"],
+    createQuery(() =>
+      query(
+        collection(db, "URMColumns")
+      )
+    )
+  );
+}
+
+// Gets one applicant based on the id
+export function useOneURMApplicant(id) {
+  return useQuery(
+    ["URMApplicants"],
+    createQuery(() =>
+      query(
+        collection(db, "Applicants"),
+        where("id", "==", id)
       )
     )
   );

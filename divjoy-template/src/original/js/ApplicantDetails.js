@@ -36,7 +36,7 @@ const ApplicantDetails = () => {
                 <div className="ContactInfo">
                   <div className="contactTitle">Contact Information</div>
                   <div>Name: {appData.name}</div>
-                  <div>Major: {appData.major}</div>
+                  <div>Major: {appData.majors}</div>
                   <div>Year: {appData.year}</div>
                 </div>
               </div>
