@@ -1,9 +1,17 @@
 import { useParams } from "react-router-dom";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Pdf from "./PDF";
 import "../css/ApplicantDetails.css";
 import Navbar from "./Navbar";
-import { useOneApplicant, createItem } from "../../util/db";
+import { useOneApplicant, createItem, dontAccept} from "../../util/db";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import { Link } from 'react-router-dom';
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import Button from "@material-ui/core/Button";
+import { connectFirestoreEmulator } from "firebase/firestore";
 import { useAuth } from "../../util/auth";
 import NotFound from "./NotFound";
 
@@ -13,7 +21,6 @@ const ApplicantDetails = () => {
   const appData = applicant.data[0]
   const photo = appData.photo[0]
   const photoURL = photo.downloadURL
-  const auth = useAuth();
 
   return (
     auth.user ? (<div className="overall">
@@ -21,7 +28,7 @@ const ApplicantDetails = () => {
       { appData && (
         <article>
           <div className="left">
-            <div className="resume">
+            <div className="resume"> 
               <Pdf id={parseInt(id)}/>
             </div>
           </div>
@@ -74,7 +81,30 @@ const ApplicantDetails = () => {
                 </div>
               </div>
               <div class = "AcceptorNah"> 
-                <button onClick={() => createItem(appData) && alert("Candidate Accepted")}> Accept</button>
+                <Button variant = "outlined" onClick={() => {setAccepted(true); setRejected(false);}} style={{backgroundColor: accepted? "gray" : "white"}}> Accept</Button>
+                <Dialog open = {accepted}  aria-labelledby="ApplicantAccepted" >
+                <DialogTitle id = "ApplicantAccepted">Your Decision</DialogTitle>
+                <DialogContent>
+                <DialogContentText>Applicant Has Been Accepted</DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Link to = '/home'>
+                  <Button onClick={handleClose}> Close</Button>
+                  </Link>
+                </DialogActions>
+                </Dialog>
+                <Button variant = "outlined" onClick = {() => {setRejected(true); setAccepted(false);}} style={{ backgroundColor: rejected!==accepted ? "white" : "gray" }}>Reject</Button>
+                <Dialog open = {rejected}  aria-labelledby="ApplicantAccepted" >
+                <DialogTitle id = "ApplicantAccepted">Your Decision</DialogTitle>
+                <DialogContent>
+                <DialogContentText>Applicant Has Been Rejected</DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Link to = '/home'>
+                  <Button onClick={handleClose} > Close</Button>
+                  </Link>
+                </DialogActions>
+                </Dialog>
               </div>
 
             </div>

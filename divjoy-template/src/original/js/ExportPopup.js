@@ -1,16 +1,35 @@
 import React from 'react';
 import "../css/ManagePopup.css";
-import { useAllApplicants, useAllColumns } from "../../util/db";
+import { useAllAcceptances, useAllApplicants, useAllColumns } from "../../util/db";
+import Button from "@material-ui/core/Button";
 
 
   
 const ExportPopup = (props) => {
 
     const newData = useAllApplicants();
-    const column = useAllColumns();
-    console.log(newData.data, column.data)    
-   function createCSV(){
+    const newAccData = useAllAcceptances();
+    const column = useAllColumns();  
+   function createApplicantsCSV(){
     let data = newData.data;
+    let col = column.data;
+    let csvContent = "ID,"
+    col.forEach(element =>{
+        let rowH = element.heading
+        csvContent += rowH + ","; })
+    csvContent += "Essay 1, Essay 2\n"
+    data.forEach(element => {
+        console.log(JSON.stringify(element.name))
+        let row = element.id + "," + element.name + "," + element.major + "," + element.year  + "," + element.essay1.toString().replaceAll(/[\r\n]/gm, "").replaceAll(/,/gm,"")  + "," + element.essay2.toString().toString().replaceAll(/[\r\n]/gm, "").replaceAll(/,/gm,"")+ "\n"
+        csvContent += row;
+    });
+    console.log(csvContent)
+    var saveThis = new Blob([csvContent], {type: 'text/csv'});
+    saveFile(saveThis, "ConnexData.csv")
+   }
+
+   function createAcceptedCSV(){
+    let data = newAccData.data;
     let col = column.data;
     let csvContent = "ID,"
     col.forEach(element =>{
@@ -23,7 +42,7 @@ const ExportPopup = (props) => {
     });
     console.log(csvContent)
     var saveThis = new Blob([csvContent], {type: 'text/csv'});
-    saveFile(saveThis, "ConnexData.csv")
+    saveFile(saveThis, "ConnexAcceptances.csv")
    }
 
 
@@ -49,7 +68,8 @@ const ExportPopup = (props) => {
         <span className="close-icon" onClick={props.handleClose}>x</span>
         <div className="title">Export Data</div>
         <form>
-            <button onClick={(e) => createCSV()}> Click to Downlaod Data</button>
+            <Button onClick={(e) => createApplicantsCSV()}> Export All Data</Button>
+            <Button onClick={(e) => createAcceptedCSV()}>Export Acceptances</Button>
         </form>
     </div>
 </div>
