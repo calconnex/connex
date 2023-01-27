@@ -1,12 +1,12 @@
 import ApplicantList from "./ApplicantList";
 import Navbar from "./Navbar";
-import { useAllApplicants, useAllColumns, useAllURMApplicants, useAllURMColumns } from "../../util/db";
+import { useAllApplicants, useAllColumns} from "../../util/db";
 import { useAuth } from "../../util/auth";
 import NotFound from "./NotFound";
 
 const Home = () => {
-  const newData = useAllURMApplicants();
-  const column = useAllURMColumns();
+  const newData = useAllApplicants();
+  const column = useAllColumns();
   const auth = useAuth();
   console.log(newData.data);
 

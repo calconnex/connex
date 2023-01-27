@@ -9,10 +9,15 @@ const ApplicantList = ({ applicants }) => {
 
   // maps the name to its values
   const [row, setRow] = useState([
-    { heading: 'Name', value: 'fullName', display: true, key: 1},
-    { heading: 'Major', value: 'majors', display: true, key: 2},
+    { heading: 'Name', value: 'name', display: true, key: 1},
+    { heading: 'Major', value: 'major', display: true, key: 2},
     { heading: 'Year', value: 'year', display: true, key: 3}
   ])
+
+  const [currApplicants, setCurrApplicants] = useState(applicants.slice(0,3))
+  const toggleCurrApplicants = (newApps) => {
+    setCurrApplicants(newApps);
+  }
 
   // Contains information to show the Manage Applicants Popup
   const [manageApplicants, setManageApplicants] = useState(false);
@@ -47,9 +52,9 @@ const ApplicantList = ({ applicants }) => {
             Export Files
         </button>
       </div>
-      <TableRotated data={applicants} column={row} />git
+      <TableRotated data={currApplicants} column={row} />
       {/* Holds the popups */}
-      {manageApplicants && <ChangePopup handleClose={toggleApplicants} data={applicants}/>}
+      {manageApplicants && <ChangePopup handleClose={toggleApplicants} data={applicants} toggleCurrApplicants={toggleCurrApplicants}/>}
       {manageOpen && <ManagePopup handleClose={toggleManage} data={row}/>}
       {exportOpen && <ExportPopup handleClose={toggleExport} applicants={applicants}/>}
     </div>

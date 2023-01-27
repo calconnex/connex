@@ -124,10 +124,10 @@ export function useAllURMApplicants() {
 // Gets one applicant based on the id
 export function useOneApplicant(id) {
   return useQuery(
-    ["URMApplicants"],
+    ["Applicants"],
     createQuery(() =>
       query(
-        collection(db, "URMApplicants"),
+        collection(db, "Applicants"),
         where("id", "==", id)
       )
     )

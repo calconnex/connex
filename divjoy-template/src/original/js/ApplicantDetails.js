@@ -9,7 +9,8 @@ import NotFound from "./NotFound";
 
 const ApplicantDetails = () => {
   const { id } = useParams();
-  const applicant = useOneApplicant(parseInt(id));
+  const applicant = useOneApplicant(id);
+  console.log(applicant);
   const appData = applicant.data[0]
   const photo = appData.photo[0]
   const photoURL = photo.downloadURL
