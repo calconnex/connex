@@ -34,42 +34,41 @@ const ApplicantDetails = () => {
                   alt="Headshot"
                   className="photo"
                 />
-                <div className="ContactInfo">
-                  <div className="contactTitle">Contact Information</div>
-                  <div>Name: {appData.name}</div>
-                  <div>Major: {appData.majors}</div>
-                  <div>Year: {appData.year}</div>
-                </div>
               </div>
-              <div className="bibliography">
-                <div className="ReferralGroup">
-                  <div className="ReferralTitle">
-                    Demographic Info
+              <div className="EssayGroup">
+                <div className="Essay1Group">
+                    <h1>{appData.name} ({appData.pronouns})</h1>
+                    <div>Year: {appData.year} </div>
+                    <div>Major: {appData.major} </div>
+                    <div>GPA: {appData.gpa} </div>
+                    <br></br>
+                    <hr></hr>
+                    <br></br>
+                    <div>Demographics: {appData.demographic} </div>
+                    <div>LGBTQ+: {appData.lgbtq} </div>
+                    <div>Junior Transfer: {appData.transfer} </div>
+                    <div>First Generation: {appData.firstGen} </div>
+                    <br></br>
+                    <hr></hr>
+                    <br></br>
+                    <h4>Contact Information</h4>
+                    <div>Phone: {appData.phone}</div>
+                    <div>Email: {appData.email}</div>
                   </div>
-                  <div className="ReferralBody">
-                    DEI Info
-                  </div>
-                </div>
-                <div className="AttachmentGroup">
-                  <div className="AttachmentTitle">
-                      Attachments:
-                  </div>
-                  <div className="AttachmentBody">
-                    attachment text
-                  </div>
-                </div>
               </div>
             </div>
 
             <div className="EssayGroup">
               <div className="Essay1Group">
-                      Essay 1 Prompt:
+              <h4>What does diversity mean to you? Why is DEI important and how does it affect you on a day-to-day basis at Berkeley? (100 words max)</h4>
+              <br></br>
                 <div className="middle">
                   { appData.essay1 }
                 </div>
               </div>
               <div className="Essay2Group">
-                Essay 2 Prompt:
+              <h4>Tell us anything else you would like! (Optional)</h4>
+              <br></br>
                 <div className="bottom">
                   { appData.essay2 }
                 </div>
