@@ -10,7 +10,7 @@ function AuthSection(props) {
   const optionsByType = {
     signup: {
       // Top Title
-      title: "Sing up for an account",
+      title: "Sign up for an account",
       // Button text
       buttonAction: "Sign up",
       // Footer text and links
