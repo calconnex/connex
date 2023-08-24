@@ -1,6 +1,11 @@
-import React from 'react'
+import { Link } from "react-router-dom";
+import connex from "../icons/logo.png";
+import setting from "../icons/setting.png"
+import home from "../icons/home.png"
+import compare from "../icons/compare.png"
+import { useAuth } from "../../util/auth";
 
-import styles from '../css/Partners.css'
+import styles from '../css/partners.module.css';
 
 const CoffeeChatsApplicant6 = (props) => {
   return (
@@ -480,4 +485,4 @@ const CoffeeChatsApplicant6 = (props) => {
   )
 }
 
-export default CoffeeChatsApplicant6
+export default CoffeeChatsApplicant6;
