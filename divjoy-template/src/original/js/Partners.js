@@ -4,6 +4,7 @@ import setting from "../icons/setting.png"
 import home from "../icons/home.png"
 import compare from "../icons/compare.png"
 import { useAuth } from "../../util/auth";
+import valley from "../icons/valley_logo.png";
 
 import styles from '../css/partners.module.css';
 
@@ -13,7 +14,7 @@ const CoffeeChatsApplicant6 = (props) => {
       <div className={styles['coffee-chats-applicant6']}>
         <div className={styles['group13790']}>
           <img
-            src="/rectangle1603261005-mg.svg"
+            src="/../icons/valley_logo.png"
             alt="Rectangle1603261005"
             className={styles['rectangle160326']}
           />
@@ -176,7 +177,7 @@ const CoffeeChatsApplicant6 = (props) => {
         <img src = {connex} alt="connex logo" className="logo" />
         <div className={styles['frame13829']}>
           <img
-            src
+            src = {valley}
             alt="E5BB7C0A49694A88AEE2A6BB3BB1BCD111005"
             className={styles['e5bb7c0a49694a88aee2a6bb3bb1bcd1105']}
           />
