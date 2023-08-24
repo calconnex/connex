@@ -47,7 +47,7 @@ const auth = getAuth(firebaseApp);
 // Create a `useAuth` hook and `AuthProvider` that enables
 // any component to subscribe to auth and re-render when it changes.
 const authContext = createContext();
-export const useAuth = () => useContext(authContext);
+export const  useAuth = () => useContext(authContext);
 // This should wrap the app in `src/pages/_app.js`
 export function AuthProvider({ children }) {
   const auth = useAuthProvider();

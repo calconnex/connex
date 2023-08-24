@@ -9,7 +9,6 @@ const Home = () => {
   const column = useAllColumns();
   const auth = useAuth();
   console.log(newData.data);
-
   return (
     auth.user ? (
     <div className="home">
