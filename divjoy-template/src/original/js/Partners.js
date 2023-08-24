@@ -173,7 +173,7 @@ const CoffeeChatsApplicant6 = (props) => {
         <span className={styles['text059']}>
           <span>All Partners</span>
         </span>
-        <img src alt="image91005" className={styles['image9']} />
+        <img src = {connex} alt="connex logo" className="logo" />
         <div className={styles['frame13829']}>
           <img
             src
