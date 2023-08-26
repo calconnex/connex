@@ -16,23 +16,30 @@
     flex-shrink: 0;
     background-color: rgba(243, 247, 255, 1);
   }
-  .group13790 {
+  .MainBanner {
     top: 24px;
-    left: 218px;
-    width: 1051px;
+    left: 180px;
+    width: 1100px;
     height: 322.8241882324219px;
     display: flex;
     position: absolute;
     align-items: flex-start;
     flex-shrink: 1;
   }
-  .rectangle160326 {
-    top: 0px;
-    left: 0px;
-    width: 1051px;
-    height: 323px;
+  .BannerRectangle {
+    width: 1000px;
+    height: auto;
     position: absolute;
     box-shadow: 2px 4px 7px 0px rgba(0, 0, 0, 0.25) ;
+  }
+  .TopLogoStyle {
+    width: auto;
+    height: auto;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    z-index: 1;
   }
   .buttons {
     gap: 10px;
@@ -42,9 +49,9 @@
     height: 49px;
     display: flex;
     padding: 10px 7px;
-    position: absolute;
+    position: relative;
     box-sizing: content-box;
-    align-items: flex-start;
+    align-items: center;
     flex-shrink: 0;
     border-color: rgba(44, 128, 255, 1);
     border-style: solid;
@@ -429,9 +436,9 @@
     height: 9px;
     position: absolute;
   }
-  .text059 {
-    top: 497px;
-    left: 227px;
+  .AllPartners {
+    top: 400px;
+    left: 180px;
     color: rgba(0, 0, 0, 1);
     height: auto;
     position: absolute;
@@ -451,54 +458,49 @@
     height: 84px;
     position: absolute;
   }
-  .frame13829 {
+  
+  .ClubFrame {
     gap: 23px;
-    top: 569.005126953125px;
-    left: 229px;
+    top: 450px;
+    left: 180px;
     width: 328px;
     height: 132px;
     display: flex;
-    padding: 20px;
-    position: absolute;
+    padding: 10px;
+    margin-right: 4px;
+    margin-left: 4px;
+    position: relative;
     box-sizing: content-box;
     align-items: center;
     flex-shrink: 0;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 1);
   }
-  .e5bb7c0a49694a88aee2a6bb3bb1bcd1105 {
+  .ClubLogo {
     width: 83px;
     height: 84px;
     border-radius: 17px 17px 17px 20px;
   }
-  .group13903 {
-    width: 182px;
-    height: 92px;
+  .MainClubGroup {
+    width: 190px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    position: relative;
+    align-items: center;
+    
+  }
+  .ClubHeadingFrame {
+    gap: 10px;
     display: flex;
     position: relative;
     align-items: flex-start;
-    flex-shrink: 1;
-  }
-  .frame13826 {
-    gap: 9px;
-    top: 0px;
-    left: 0px;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
     flex-direction: column;
-  }
-  .text061 {
-    color: rgba(39, 40, 41, 1);
-    height: auto;
     font-size: 18px;
     font-style: Bold;
     text-align: left;
     font-family: Inter;
     font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
   }
   .frame13827 {
     gap: 6px;
@@ -507,19 +509,28 @@
     align-items: flex-start;
     flex-shrink: 0;
   }
-  .group13791 {
-    width: 95px;
+  .FirstTag {
+    width: 85px;
     height: 15px;
     display: flex;
     position: relative;
-    align-items: flex-start;
+    align-items: start;
     flex-shrink: 1;
     background-color: rgba(71, 175, 54, 1);
   }
-  .text063 {
-    left: 14.718016624450684px;
+  .SecondTag {
+    width: 85px;
+    height: 15px;
+    display: flex;
+    position: relative;
+    align-items: start;
+    flex-shrink: 1;
+    background-color:  rgba(255, 104, 104, 1);;
+  }
+  .TagText {
+    text-align: center;
     color: rgba(255, 255, 255, 1);
-    width: 67px;
+    width: 65px;
     height: auto;
     position: absolute;
     font-size: 10px;
@@ -567,6 +578,20 @@
     font-stretch: normal;
     text-decoration: none;
   }
+
+  .text069 {
+    color: rgba(44, 128, 255, 1);
+    height: auto;
+    font-size: 10px;
+    font-style: Medium;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
   .buttons01 {
     gap: 10px;
     display: flex;
@@ -579,18 +604,6 @@
     border-radius: 5px;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 1);
-  }
-  .text069 {
-    color: rgba(44, 128, 255, 1);
-    height: auto;
-    font-size: 10px;
-    font-style: Medium;
-    text-align: center;
-    font-family: Inter;
-    font-weight: 500;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
   }
   .frame13830 {
     gap: 23px;
@@ -642,7 +655,6 @@
     font-weight: 700;
     line-height: normal;
     font-stretch: normal;
-    text-decoration: none;
   }
   .frame138271 {
     gap: 6px;
