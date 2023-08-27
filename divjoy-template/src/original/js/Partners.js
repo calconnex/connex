@@ -10,6 +10,39 @@ import plain from "../icons/plainwhite.png";
 
 import styles from '../css/partners.module.css';
 
+const GeneralClickablePartner = ({clubName, categoryOne, categoryTwo, numMembers}) => (
+  <div className={styles['ClubFrame']}>
+          <img
+            src = {valley}
+            alt="Net Impact Logo"
+            className={styles['ClubLogo']}
+          />
+          <div className={styles['MainClubGroup']}>
+            <div className={styles['ClubHeadingFrame']}>
+                <span>{clubName}</span>
+                <div className={styles['FirstTag']}>
+                  <span className={styles['TagText']}>
+                    <span>{categoryOne}</span>
+                  </span>
+                </div>
+                <div className={styles['SecondTag']}>
+                  <span className={styles['TagText']}>
+                    <span>{categoryTwo}</span>
+                  </span>
+              </div>
+              <span className={styles['text067']}>
+                <span>Number of Members: ~{numMembers}</span>
+              </span>
+              <button className={styles['buttons01']}>
+                <span className={styles['text069']}>
+                  <span>Application Link</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+);
+
 const ClickablePartner = (
   <div className={styles['ClubFrame']}>
           <img
@@ -70,6 +103,7 @@ const CoffeeChatsApplicant6 = (props) => {
         </span>
 
       <div style={gridStyle}>
+        <GeneralClickablePartner clubName="Valley Consulting" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
         {ClickablePartner}
         {ClickablePartner}
         {ClickablePartner}
