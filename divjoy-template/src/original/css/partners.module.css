@@ -60,6 +60,10 @@
     border-radius: 5px;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 1);
+    transition: transform 0.3s;
+  }
+  .buttons:hover {
+    transform: scale(1.05);
   }
   .text {
     color: rgba(44, 128, 255, 1);
