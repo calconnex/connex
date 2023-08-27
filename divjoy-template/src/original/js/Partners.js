@@ -21,7 +21,7 @@ import React, { useState } from 'react';
 import styles from '../css/partners.module.css';
 
 
-const GeneralClickablePartner = ({logo, clubName, categoryOne, categoryTwo, numMembers}) => {
+const GeneralClickablePartner = ({logo, clubName, categoryOne, categoryTwo, numMembers, applicationLink}) => {
 
 
   return (
@@ -46,11 +46,11 @@ const GeneralClickablePartner = ({logo, clubName, categoryOne, categoryTwo, numM
               <span className={styles['text067']}>
                 <span>Number of Members: ~{numMembers}</span>
               </span>
-              <button className={styles['buttons01']}>
+              <a href={applicationLink} className={styles['buttons01']} target="_blank" rel="noopener noreferrer">
                 <span className={styles['text069']}>
                   <span>Application Link</span>
                 </span>
-              </button>
+              </a>
             </div>
         </div>
   );
@@ -85,16 +85,16 @@ const CoffeeChatsApplicant6 = (props) => {
 
       <div style={gridStyle}>
         <GeneralClickablePartner logo={valley}clubName="Valley Consulting" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
-        <GeneralClickablePartner logo={launchpad} clubName="Launchpad" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={40}/>
+        <GeneralClickablePartner logo={launchpad} clubName="Launchpad" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={40} applicationLink='https://launchpad.berkeley.edu/login'/>
         <GeneralClickablePartner logo={voyager} clubName="Voyager Consulting" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={40}/>
-        <GeneralClickablePartner logo={blockchain} clubName="Blockchain at Berkeley" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
-        <GeneralClickablePartner logo={webdev_logo} clubName="Web Development at Berkeley" categoryOne="Technology" categoryTwo="Consulting" numMembers={55}/>
+        <GeneralClickablePartner logo={blockchain} clubName="Blockchain at Berkeley" categoryOne="Technology" categoryTwo="Consulting" numMembers={30} applicationLink='https://airtable.com/shrPKaQsjldBWa4h2'/>
+        <GeneralClickablePartner logo={webdev_logo} clubName="Web Development at Berkeley" categoryOne="Technology" categoryTwo="Consulting" numMembers={55} applicationLink='https://airtable.com/shrxn0L0lPosFnAZl'/>
         <GeneralClickablePartner logo={cmg_logo} clubName="CMG Strategy Consulting" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={30}/>
-        <GeneralClickablePartner logo={blueprint_logo} clubName="Blueprint, Technology for Nonprofits" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner logo={blueprint_logo} clubName="Blueprint, Technology for Nonprofits" categoryOne="Technology" categoryTwo="Consulting" numMembers={30} applicationLink='https://calblueprint.org/apply/students/new'/>
         <GeneralClickablePartner logo={netimpact} clubName="Net Impact" categoryOne="Social Impact" categoryTwo="Consulting" numMembers={35}/>
         <GeneralClickablePartner logo={bbs_logo} clubName="Berkeley Business Society" categoryOne="Business" categoryTwo="Consulting" numMembers={45}/>
-        <GeneralClickablePartner logo={mlab_logo}clubName="Machine Learning at Berkeley" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={60}/>
-        <GeneralClickablePartner logo={codeology_logo} clubName="Codeology" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={30}/>
+        <GeneralClickablePartner logo={mlab_logo}clubName="Machine Learning at Berkeley" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={60} applicationLink='https://airtable.com/shrM46VkYPCfOTwIS'/>
+        <GeneralClickablePartner logo={codeology_logo} clubName="Codeology" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={30} applicationLink='https://airtable.com/shrn4obnK5NGilFgU'/>
       </div>
 
 
