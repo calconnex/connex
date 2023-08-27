@@ -43,39 +43,6 @@ const GeneralClickablePartner = ({clubName, categoryOne, categoryTwo, numMembers
         </div>
 );
 
-const ClickablePartner = (
-  <div className={styles['ClubFrame']}>
-          <img
-            src = {valley}
-            alt="Net Impact Logo"
-            className={styles['ClubLogo']}
-          />
-          <div className={styles['MainClubGroup']}>
-            <div className={styles['ClubHeadingFrame']}>
-                <span>Net Impact, Berkeley</span>
-                <div className={styles['FirstTag']}>
-                  <span className={styles['TagText']}>
-                    <span>Social Impact</span>
-                  </span>
-                </div>
-                <div className={styles['SecondTag']}>
-                  <span className={styles['TagText']}>
-                    <span>Consulting</span>
-                  </span>
-              </div>
-              <span className={styles['text067']}>
-                <span>Number of Members: ~30</span>
-              </span>
-              <button className={styles['buttons01']}>
-                <span className={styles['text069']}>
-                  <span>Application Link</span>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-);
-
 const gridStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)', // Three columns in a row
