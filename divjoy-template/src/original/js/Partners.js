@@ -17,17 +17,20 @@ import mlab_logo from "../icons/mlab_logo.png";
 import codeology_logo from "../icons/codeology_logo.png";
 import full from "../icons/full_logo.png";
 import plain from "../icons/plainwhite.png";
-
+import React, { useState } from 'react';
 import styles from '../css/partners.module.css';
 
-const GeneralClickablePartner = ({logo, clubName, categoryOne, categoryTwo, numMembers}) => (
+
+const GeneralClickablePartner = ({logo, clubName, categoryOne, categoryTwo, numMembers}) => {
+
+
+  return (
   <div className={styles['ClubFrame']}>
           <img
             src = {logo}
             alt="Net Impact Logo"
             className={styles['ClubLogo']}
           />
-          <div className={styles['MainClubGroup']}>
             <div className={styles['ClubHeadingFrame']}>
                 <span>{clubName}</span>
                 <div className={styles['FirstTag']}>
@@ -49,9 +52,10 @@ const GeneralClickablePartner = ({logo, clubName, categoryOne, categoryTwo, numM
                 </span>
               </button>
             </div>
-          </div>
         </div>
-);
+  );
+};
+
 
 const gridStyle = {
   display: 'grid',
