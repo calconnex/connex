@@ -104,17 +104,16 @@ const CoffeeChatsApplicant6 = (props) => {
 
       <div style={gridStyle}>
         <GeneralClickablePartner clubName="Valley Consulting" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
-        {ClickablePartner}
-        {ClickablePartner}
-        {ClickablePartner}
-        {ClickablePartner}
-        {ClickablePartner}
-        {ClickablePartner}
-        {ClickablePartner}
-        {ClickablePartner}
-        {ClickablePartner}
-        {ClickablePartner}
-        {ClickablePartner}
+        <GeneralClickablePartner clubName="CMG Strategy Consulting" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner clubName="Codeology" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner clubName="Launchpad" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner clubName="Blockchain at Berkeley" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner clubName="Web Development at Berkeley" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner clubName="Blueprint, Technology for Nonprofits" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner clubName="Voyager Consulting" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner clubName="Berkeley Business Society" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner clubName="Net Impact" categoryOne="Social Impact" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner clubName="Machine Learning at Berkeley" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
       </div>
 
 
