@@ -105,15 +105,15 @@ const CoffeeChatsApplicant6 = (props) => {
       <div style={gridStyle}>
         <GeneralClickablePartner clubName="Valley Consulting" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
         <GeneralClickablePartner clubName="CMG Strategy Consulting" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={30}/>
-        <GeneralClickablePartner clubName="Codeology" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
-        <GeneralClickablePartner clubName="Launchpad" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner clubName="Codeology" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={30}/>
+        <GeneralClickablePartner clubName="Launchpad" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={40}/>
         <GeneralClickablePartner clubName="Blockchain at Berkeley" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
-        <GeneralClickablePartner clubName="Web Development at Berkeley" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner clubName="Web Development at Berkeley" categoryOne="Technology" categoryTwo="Consulting" numMembers={55}/>
         <GeneralClickablePartner clubName="Blueprint, Technology for Nonprofits" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
-        <GeneralClickablePartner clubName="Voyager Consulting" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={30}/>
-        <GeneralClickablePartner clubName="Berkeley Business Society" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
-        <GeneralClickablePartner clubName="Net Impact" categoryOne="Social Impact" categoryTwo="Consulting" numMembers={30}/>
-        <GeneralClickablePartner clubName="Machine Learning at Berkeley" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner clubName="Voyager Consulting" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={40}/>
+        <GeneralClickablePartner clubName="Berkeley Business Society" categoryOne="Business" categoryTwo="Consulting" numMembers={45}/>
+        <GeneralClickablePartner clubName="Net Impact" categoryOne="Social Impact" categoryTwo="Consulting" numMembers={35}/>
+        <GeneralClickablePartner clubName="Machine Learning at Berkeley" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={60}/>
       </div>
 
 
