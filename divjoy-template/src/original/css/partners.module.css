@@ -475,7 +475,8 @@
     flex-shrink: 0;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 1);
-    transition: transform 0.3s
+    border: 2px solid rgba(44, 128, 255, 1);
+    transition: transform 0.3s;
   }
   .ClubFrame:hover {
     transform: scale(1.05);
@@ -492,7 +493,6 @@
     grid-template-columns: auto auto auto auto;
     position: relative;
     align-items: center;
-    
   }
   .ClubHeadingFrame {
     gap: 10px;
