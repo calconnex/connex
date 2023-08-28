@@ -86,7 +86,7 @@ const CoffeeChatsApplicant6 = (props) => {
         </div>
 
         <span className={styles['AllPartners']}>
-          <span>All Partners</span>
+          <span>Organizations</span>
         </span>
 
       <div style={gridStyle_3}>
