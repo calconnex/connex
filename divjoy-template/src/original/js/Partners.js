@@ -61,6 +61,9 @@ const gridStyle_3 = {
   gridTemplateColumns: 'repeat(3, 1fr)', // Three columns in a row
   gap: '10px', // Gap between images
 
+  '@media (max-width: 1500px)': {
+    gridTemplateColumns:'2fr',
+  },
   '@media (max-width: 768px)': {
     gridTemplateColumns: '1fr',
   }
@@ -75,11 +78,11 @@ const CoffeeChatsApplicant6 = (props) => {
           <img src = {full} alt="connex logo" className={styles['TopLogoStyle']}/>
           <img src = {plain} className={styles['BannerRectangle']}/>
           
-          <button className={styles['buttons']}>
+          <a href='https://docs.google.com/forms/d/e/1FAIpQLSc_wEwFNpLHcStq2gjXm_NCkpcLy-z3__Ep7iT63e0wJ98PwA/viewform' className={styles['buttons']} target="_blank" rel="noopener noreferrer">
             <span className={styles['text']}>
-              <span>Application Link</span>
+              <span>URM Application Link</span>
             </span>
-          </button>
+          </a>
         </div>
 
         <span className={styles['AllPartners']}>
@@ -87,15 +90,15 @@ const CoffeeChatsApplicant6 = (props) => {
         </span>
 
       <div style={gridStyle_3}>
-        <GeneralClickablePartner logo={valley}clubName="Valley Consulting" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner logo={valley}clubName="Valley Consulting" categoryOne="Technology" categoryTwo="Consulting" numMembers={30} applicationLink='https://docs.google.com/forms/d/e/1FAIpQLSesQBVbmKYI4Y-6fMDVnL7w8ii_G-edSPdAWu_XRxbkAQ73Fw/viewform'/>
         <GeneralClickablePartner logo={launchpad} clubName="Launchpad" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={40} applicationLink='https://launchpad.berkeley.edu/login'/>
-        <GeneralClickablePartner logo={voyager} clubName="Voyager Consulting" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={40}/>
+        <GeneralClickablePartner logo={voyager} clubName="Voyager Consulting" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={40} applicationLink='https://airtable.com/shrQCRV9gSVmCQC0Y'/>
         <GeneralClickablePartner logo={blockchain} clubName="Blockchain at Berkeley" categoryOne="Technology" categoryTwo="Consulting" numMembers={30} applicationLink='https://airtable.com/shrPKaQsjldBWa4h2'/>
         <GeneralClickablePartner logo={webdev_logo} clubName="Web Development at Berkeley" categoryOne="Technology" categoryTwo="Consulting" numMembers={55} applicationLink='https://airtable.com/shrxn0L0lPosFnAZl'/>
-        <GeneralClickablePartner logo={cmg_logo} clubName="CMG Strategy Consulting" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={30}/>
+        <GeneralClickablePartner logo={cmg_logo} clubName="CMG Strategy Consulting" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={30} applicationLink='https://airtable.com/shrNj791lHh4SIMX0'/>
         <GeneralClickablePartner logo={blueprint_logo} clubName="Blueprint, Technology for Nonprofits" categoryOne="Technology" categoryTwo="Consulting" numMembers={30} applicationLink='https://calblueprint.org/apply/students/new'/>
-        <GeneralClickablePartner logo={netimpact} clubName="Net Impact" categoryOne="Social Impact" categoryTwo="Consulting" numMembers={35}/>
-        <GeneralClickablePartner logo={bbs_logo} clubName="Berkeley Business Society" categoryOne="Business" categoryTwo="Consulting" numMembers={45}/>
+        <GeneralClickablePartner logo={netimpact} clubName="Net Impact" categoryOne="Social Impact" categoryTwo="Consulting" numMembers={35} applicationLink='https://airtable.com/shrs73X85oN1iDBX2'/>
+        <GeneralClickablePartner logo={bbs_logo} clubName="Berkeley Business Society" categoryOne="Business" categoryTwo="Consulting" numMembers={45} applicationLink='http://www.berkeleybusinesssociety.com/application'/>
         <GeneralClickablePartner logo={mlab_logo}clubName="Machine Learning at Berkeley" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={60} applicationLink='https://airtable.com/shrM46VkYPCfOTwIS'/>
         <GeneralClickablePartner logo={codeology_logo} clubName="Codeology" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={30} applicationLink='https://airtable.com/shrn4obnK5NGilFgU'/>
       </div>
