@@ -56,11 +56,14 @@ const GeneralClickablePartner = ({logo, clubName, categoryOne, categoryTwo, numM
   );
 };
 
-
-const gridStyle = {
+const gridStyle_3 = {
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)', // Three columns in a row
   gap: '10px', // Gap between images
+
+  '@media (max-width: 768px)': {
+    gridTemplateColumns: '1fr',
+  }
 };
 
 const CoffeeChatsApplicant6 = (props) => {
@@ -83,7 +86,7 @@ const CoffeeChatsApplicant6 = (props) => {
           <span>All Partners</span>
         </span>
 
-      <div style={gridStyle}>
+      <div style={gridStyle_3}>
         <GeneralClickablePartner logo={valley}clubName="Valley Consulting" categoryOne="Technology" categoryTwo="Consulting" numMembers={30}/>
         <GeneralClickablePartner logo={launchpad} clubName="Launchpad" categoryOne="Technology" categoryTwo="FILL IN INFO" numMembers={40} applicationLink='https://launchpad.berkeley.edu/login'/>
         <GeneralClickablePartner logo={voyager} clubName="Voyager Consulting" categoryOne="FILL IN INFO" categoryTwo="Consulting" numMembers={40}/>
