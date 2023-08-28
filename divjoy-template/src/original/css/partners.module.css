@@ -521,7 +521,7 @@
   }
   @media (max-width: 1000px) {
     .ClubFrame {
-      width: 100%; /* Expand to full width of the screen */
+      width: 75%; /* Expand to full width of the screen */
       height: auto; /* Adjust height dynamically based on content */
       display: block; /* Remove flex display for vertical stacking */
       padding: 20px; /* Increase padding for mobile-friendly spacing */

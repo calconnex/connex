@@ -61,11 +61,11 @@ const gridStyle_3 = {
   gridTemplateColumns: 'repeat(3, 1fr)', // Three columns in a row
   gap: '10px', // Gap between images
 
-  '@media (max-width: 1500px)': {
-    gridTemplateColumns:'2fr',
+  '@media (max-width: 1000px)': {
+    gridTemplateColumns:'repeat(2, 1fr)',
   },
   '@media (max-width: 768px)': {
-    gridTemplateColumns: '1fr',
+    gridTemplateColumns: 'repeat(1, 1fr)',
   }
 };
 
