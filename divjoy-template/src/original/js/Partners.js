@@ -49,24 +49,6 @@ const GeneralClickablePartner = ({logo, clubName, categoryOne, categoryTwo, numM
   );
 };
 
-const gridStyle_3 = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)', // Three columns in a row
-  gap: '10px', // Gap between images
-
-  '@media (max-width: 1000px)': {
-    gridTemplateColumns:'repeat(2, 1fr)',
-  },
-
-  '@media (max-width: 768px)': {
-    gridTemplateColumns: 'repeat(1, 1fr)',
-  },
-  
-  '@media (max-width: 480px)': {
-    gridTemplateColumns: '1fr',
-  }
-};
-
 const CoffeeChatsApplicant6 = (props) => {
   return (
     <div className={styles['container']}>
@@ -87,7 +69,7 @@ const CoffeeChatsApplicant6 = (props) => {
           <span>Organizations</span>
         </span>
 
-      <div style={gridStyle_3}>
+      <div className={styles['grid-container']}>
         <GeneralClickablePartner logo={valley}clubName="Valley Consulting" categoryOne="Technology" categoryTwo="Consulting" numMembers={30} applicationLink='https://docs.google.com/forms/d/e/1FAIpQLSesQBVbmKYI4Y-6fMDVnL7w8ii_G-edSPdAWu_XRxbkAQ73Fw/viewform'/>
         <GeneralClickablePartner logo={launchpad} clubName="Launchpad" categoryOne="SWE" categoryTwo="Entrepreneurship" numMembers={40} applicationLink='https://launchpad.berkeley.edu/login'/>
         <GeneralClickablePartner logo={voyager} clubName="Voyager Consulting" categoryOne="Technology" categoryTwo="Consulting" numMembers={40} applicationLink='https://airtable.com/shrQCRV9gSVmCQC0Y'/>
@@ -100,11 +82,11 @@ const CoffeeChatsApplicant6 = (props) => {
         <GeneralClickablePartner logo={mlab_logo}clubName="Machine Learning @ Berkeley" categoryOne="Technology" categoryTwo="SWE" numMembers={60} applicationLink='https://airtable.com/shrM46VkYPCfOTwIS'/>
         <GeneralClickablePartner logo={codeology_logo} clubName="Codeology" categoryOne="Technology" categoryTwo="SWE" numMembers={30} applicationLink='https://airtable.com/shrn4obnK5NGilFgU'/>
         <GeneralClickablePartner logo={codebase_logo} clubName="Codebase" categoryOne="Technology" categoryTwo="SWE" numMembers={50} applicationLink='https://airtable.com/appq6g24ASOBIBsiq/shrpBqxVCq8gjM2p0'/>
-        </div>
-
-
-        </div>
       </div>
+
+
+      </div>
+    </div>
   )
 }
 
