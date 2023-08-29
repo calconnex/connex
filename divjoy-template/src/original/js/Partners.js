@@ -74,13 +74,13 @@ const CoffeeChatsApplicant6 = (props) => {
         <GeneralClickablePartner logo={launchpad} clubName="Launchpad" categoryOne="SWE" categoryTwo="Entrepreneurship" numMembers={40} applicationLink='https://launchpad.berkeley.edu/login'/>
         <GeneralClickablePartner logo={voyager} clubName="Voyager Consulting" categoryOne="Technology" categoryTwo="Consulting" numMembers={40} applicationLink='https://airtable.com/appWkZVqW4fB41ZL1/shrQCRV9gSVmCQC0Y'/>
         <GeneralClickablePartner logo={blockchain} clubName="Blockchain @ Berkeley" categoryOne="Crypto" categoryTwo="SWE" numMembers={30} applicationLink='https://airtable.com/shrPKaQsjldBWa4h2'/>
-        <GeneralClickablePartner logo={webdev_logo} clubName="WebDev @ Berkeley" categoryOne="Education" categoryTwo="SWE" numMembers={55} applicationLink='https://airtable.com/shrxn0L0lPosFnAZl'/>
+        <GeneralClickablePartner logo={webdev_logo} clubName="WebDev @ Berkeley" categoryOne="Education" categoryTwo="SWE" numMembers={55} applicationLink='https://airtable.com/app9KytKyLJg5Nsvq/shrxn0L0lPosFnAZl'/>
         <GeneralClickablePartner logo={cmg_logo} clubName="CMG Strategy Consulting" categoryOne="Strategy" categoryTwo="Consulting" numMembers={30} applicationLink='https://airtable.com/shrNj791lHh4SIMX0'/>
         <GeneralClickablePartner logo={blueprint_logo} clubName="Blueprint, Technology for Nonprofits" categoryOne="SWE" categoryTwo="Social Impact" numMembers={30} applicationLink='https://calblueprint.org/apply/students/new'/>
         <GeneralClickablePartner logo={netimpact} clubName="Net Impact" categoryOne="Social Impact" categoryTwo="Consulting" numMembers={35} applicationLink='https://airtable.com/shrs73X85oN1iDBX2'/>
         <GeneralClickablePartner logo={bbs_logo} clubName="Berkeley Business Society" categoryOne="Business" categoryTwo="Consulting" numMembers={45} applicationLink='http://www.berkeleybusinesssociety.com/application'/>
-        <GeneralClickablePartner logo={mlab_logo}clubName="Machine Learning @ Berkeley" categoryOne="Technology" categoryTwo="SWE" numMembers={60} applicationLink='https://airtable.com/shrM46VkYPCfOTwIS'/>
-        <GeneralClickablePartner logo={codeology_logo} clubName="Codeology" categoryOne="Technology" categoryTwo="SWE" numMembers={30} applicationLink='https://airtable.com/shrn4obnK5NGilFgU'/>
+        <GeneralClickablePartner logo={mlab_logo}clubName="Machine Learning @ Berkeley" categoryOne="Technology" categoryTwo="SWE" numMembers={60} applicationLink='https://airtable.com/appOSisbiziVN67d0/shrM46VkYPCfOTwIS'/>
+        <GeneralClickablePartner logo={codeology_logo} clubName="Codeology" categoryOne="Technology" categoryTwo="SWE" numMembers={30} applicationLink='https://airtable.com/applyaocpRcADTuUY/shrn4obnK5NGilFgU'/>
         <GeneralClickablePartner logo={codebase_logo} clubName="Codebase" categoryOne="Technology" categoryTwo="SWE" numMembers={50} applicationLink='https://airtable.com/appq6g24ASOBIBsiq/shrpBqxVCq8gjM2p0'/>
       </div>
 
