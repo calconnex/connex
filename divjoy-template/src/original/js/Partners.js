@@ -21,7 +21,6 @@ import plain from "../icons/plainwhite.png";
 import React, { useState } from 'react';
 import styles from '../css/partners.module.css';
 
-
 const GeneralClickablePartner = ({logo, clubName, categoryOne, categoryTwo, numMembers, applicationLink}) => {
 
 
@@ -33,17 +32,10 @@ const GeneralClickablePartner = ({logo, clubName, categoryOne, categoryTwo, numM
             className={styles['ClubLogo']}
           />
             <div className={styles['ClubHeadingFrame']}>
-                <span>{clubName}</span>
-                <div className={styles['FirstTag']}>
-                  <span className={styles['TagText']}>
-                    <span>{categoryOne}</span>
-                  </span>
-                </div>
-                <div className={styles['SecondTag']}>
-                  <span className={styles['TagText']}>
-                    <span>{categoryTwo}</span>
-                  </span>
-              </div>
+              <span>{clubName}</span>
+              <span className={styles['text067']}>
+                <span>Focus Areas: {categoryOne}, {categoryTwo}</span>
+              </span>
               <span className={styles['text067']}>
                 <span>Number of Members: ~{numMembers}</span>
               </span>
@@ -94,16 +86,16 @@ const CoffeeChatsApplicant6 = (props) => {
         <GeneralClickablePartner logo={valley}clubName="Valley Consulting" categoryOne="Technology" categoryTwo="Consulting" numMembers={30} applicationLink='https://docs.google.com/forms/d/e/1FAIpQLSesQBVbmKYI4Y-6fMDVnL7w8ii_G-edSPdAWu_XRxbkAQ73Fw/viewform'/>
         <GeneralClickablePartner logo={launchpad} clubName="Launchpad" categoryOne="SWE" categoryTwo="Entrepreneurship" numMembers={40} applicationLink='https://launchpad.berkeley.edu/login'/>
         <GeneralClickablePartner logo={voyager} clubName="Voyager Consulting" categoryOne="Technology" categoryTwo="Consulting" numMembers={40} applicationLink='https://airtable.com/shrQCRV9gSVmCQC0Y'/>
-        <GeneralClickablePartner logo={blockchain} clubName="Blockchain at Berkeley" categoryOne="Crypto" categoryTwo="SWE" numMembers={30} applicationLink='https://airtable.com/shrPKaQsjldBWa4h2'/>
+        <GeneralClickablePartner logo={blockchain} clubName="Blockchain @ Berkeley" categoryOne="Crypto" categoryTwo="SWE" numMembers={30} applicationLink='https://airtable.com/shrPKaQsjldBWa4h2'/>
         <GeneralClickablePartner logo={webdev_logo} clubName="WebDev @ Berkeley" categoryOne="Education" categoryTwo="SWE" numMembers={55} applicationLink='https://airtable.com/shrxn0L0lPosFnAZl'/>
         <GeneralClickablePartner logo={cmg_logo} clubName="CMG Strategy Consulting" categoryOne="Strategy" categoryTwo="Consulting" numMembers={30} applicationLink='https://airtable.com/shrNj791lHh4SIMX0'/>
         <GeneralClickablePartner logo={blueprint_logo} clubName="Blueprint, Technology for Nonprofits" categoryOne="SWE" categoryTwo="Social Impact" numMembers={30} applicationLink='https://calblueprint.org/apply/students/new'/>
         <GeneralClickablePartner logo={netimpact} clubName="Net Impact" categoryOne="Social Impact" categoryTwo="Consulting" numMembers={35} applicationLink='https://airtable.com/shrs73X85oN1iDBX2'/>
         <GeneralClickablePartner logo={bbs_logo} clubName="Berkeley Business Society" categoryOne="Business" categoryTwo="Consulting" numMembers={45} applicationLink='http://www.berkeleybusinesssociety.com/application'/>
-        <GeneralClickablePartner logo={mlab_logo}clubName="Machine Learning at Berkeley" categoryOne="Technology" categoryTwo="SWE" numMembers={60} applicationLink='https://airtable.com/shrM46VkYPCfOTwIS'/>
+        <GeneralClickablePartner logo={mlab_logo}clubName="Machine Learning @ Berkeley" categoryOne="Technology" categoryTwo="SWE" numMembers={60} applicationLink='https://airtable.com/shrM46VkYPCfOTwIS'/>
         <GeneralClickablePartner logo={codeology_logo} clubName="Codeology" categoryOne="Technology" categoryTwo="SWE" numMembers={30} applicationLink='https://airtable.com/shrn4obnK5NGilFgU'/>
-        <GeneralClickablePartner logo={codebase_logo} clubName="Codebase" categoryOne="replace" categoryTwo="replace" numMembers={50} applicationLink='https://airtable.com/appq6g24ASOBIBsiq/shrpBqxVCq8gjM2p0'/>
-      </div>
+        <GeneralClickablePartner logo={codebase_logo} clubName="Codebase" categoryOne="Technology" categoryTwo="SWE" numMembers={50} applicationLink='https://airtable.com/appq6g24ASOBIBsiq/shrpBqxVCq8gjM2p0'/>
+        </div>
 
 
         </div>
