@@ -19,12 +19,14 @@ function App() {
         <Router>
           <div className="App">
             <Switch>
+              {/*
               <Route exact path="/">
                 <SignIn />
               </Route>
+  */}
 
               <Route exact path="/auth/:type" component={AuthPage}/>
-              <Route path = "/partners">
+              <Route path = "/">
                 <CoffeeChatsApplicant6 />
               </Route>
               <Route path="/home">
