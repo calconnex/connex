@@ -19,6 +19,7 @@
     position: relative;
     align-items: flex-start;
     flex-shrink: 0;
+    overflow: auto;
     background-color: rgba(243, 247, 255, 1);
     /*background-color: #191970; /*CHANGED THIS*/
     background-color: rgba(44, 128, 255, 1);
