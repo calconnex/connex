@@ -57,8 +57,13 @@ const gridStyle_3 = {
   '@media (max-width: 1000px)': {
     gridTemplateColumns:'repeat(2, 1fr)',
   },
+
   '@media (max-width: 768px)': {
     gridTemplateColumns: 'repeat(1, 1fr)',
+  },
+  
+  '@media (max-width: 480px)': {
+    gridTemplateColumns: '1fr',
   }
 };
 
