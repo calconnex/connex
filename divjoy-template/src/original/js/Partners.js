@@ -15,6 +15,7 @@ import netimpact from "../icons/netimpact.png";
 import bbs_logo from "../icons/bbs_logo.png";
 import mlab_logo from "../icons/mlab_logo.png";
 import codeology_logo from "../icons/codeology_logo.png";
+import codebase_logo from "../icons/codebase_logo.png";
 import full from "../icons/full_logo.png";
 import plain from "../icons/plainwhite.png";
 import React, { useState } from 'react';
@@ -101,6 +102,7 @@ const CoffeeChatsApplicant6 = (props) => {
         <GeneralClickablePartner logo={bbs_logo} clubName="Berkeley Business Society" categoryOne="Business" categoryTwo="Consulting" numMembers={45} applicationLink='http://www.berkeleybusinesssociety.com/application'/>
         <GeneralClickablePartner logo={mlab_logo}clubName="Machine Learning at Berkeley" categoryOne="Technology" categoryTwo="SWE" numMembers={60} applicationLink='https://airtable.com/shrM46VkYPCfOTwIS'/>
         <GeneralClickablePartner logo={codeology_logo} clubName="Codeology" categoryOne="Technology" categoryTwo="SWE" numMembers={30} applicationLink='https://airtable.com/shrn4obnK5NGilFgU'/>
+        <GeneralClickablePartner logo={codebase_logo} clubName="Codebase" categoryOne="replace" categoryTwo="replace" numMembers={50} applicationLink='https://airtable.com/appq6g24ASOBIBsiq/shrpBqxVCq8gjM2p0'/>
       </div>
 
 
