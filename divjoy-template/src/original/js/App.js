@@ -10,6 +10,7 @@ import AuthPage from '../../pages/auth';
 import { AuthProvider } from "../../util/auth";
 import { QueryClientProvider } from "../../util/db";
 import CoffeeChatsApplicant6 from './Partners';
+import Chong from './Landing';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <AuthProvider>
         <Router>
           <div className="App">
+        
             <Switch>
               {/*
               <Route exact path="/">
@@ -27,7 +29,7 @@ function App() {
 
               <Route exact path="/auth/:type" component={AuthPage}/>
               <Route path = "/">
-                <CoffeeChatsApplicant6 />
+                <Chong />
               </Route>
               <Route path="/home">
                 <Home />
