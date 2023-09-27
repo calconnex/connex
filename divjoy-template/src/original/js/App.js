@@ -43,6 +43,9 @@ function App() {
               <Route path="/applicants/:id">
                 <ApplicantDetails />
               </Route>
+              <Route path="/signin">
+                <SignIn />
+              </Route>
               <Route path="*">
                 <NotFound />
               </Route>

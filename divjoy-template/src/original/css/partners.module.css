@@ -1908,9 +1908,9 @@ body {
   width: 20%;
   height: auto;
   position: absolute;
-  top: 0;
+  top: 15px;
   left: 10px;
-
+  border-radius: 10px;
 }
 
 .landingLogin {
@@ -1921,8 +1921,8 @@ body {
   padding: 8px 16px; /* Adjust padding for button size */
   border-radius: 4px; /* Rounded corners for the button */
   position: absolute;
-  top: 10px; /* Adjust the distance from the top */
-  right: 10px; /* Adjust the distance from the right */
+  top: 35px; /* Adjust the distance from the top */
+  right: 120px; /* Adjust the distance from the right */
   cursor: pointer; /* Add pointer cursor for interaction */
   text-decoration: none; /* Remove underlines if it's a link */
   font-weight: bold; /* Make text bold */
@@ -1935,6 +1935,43 @@ body {
   transform: scale(1.1);
 }
 
+.landingSignup {
+  background-color: rgba(44, 128, 255, 1);
+  background-color: #eee;
+  /*border: 2px solid rgba(44, 128, 255, 1);*/
+  color: rgba(44, 128, 255, 1); /* Text color */
+  padding: 8px 16px; /* Adjust padding for button size */
+  border-radius: 4px; /* Rounded corners for the button */
+  position: absolute;
+  top: 35px; /* Adjust the distance from the top */
+  right: 10px; /* Adjust the distance from the right */
+  cursor: pointer; /* Add pointer cursor for interaction */
+  text-decoration: none; /* Remove underlines if it's a link */
+  font-weight: bold; /* Make text bold */
+  transition: transform 0.2s;
+  /*text-decoration: none !important;*/
+}
 
+/* Hover effect for the button */
+.landingSignup:hover {
+  transform: scale(1.1);
+}
 
+.line {
+  width: 100%; /* Set the width of the line to 100% to span the entire page */
+  border: 2px solid rgba(44, 128, 255, 1); /* Define the line's appearance */
+  margin-top: 75px;
+  border-style: solid; /* Set the border style to solid */
+  border-color: rgba(44, 128, 255, 1)
+}
 
+.dropdownMenuBanner {
+  width: 100%;
+  background-color: #000; /* Black background color */
+  color: #fff; /* White text color */
+  padding: 50px; /* Adjust padding as needed */
+  text-align: center; /* Center-align text */
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  top: 0px;
+}

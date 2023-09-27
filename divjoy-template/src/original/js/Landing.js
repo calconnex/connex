@@ -15,8 +15,14 @@ const Chong = (props) => {
     return (
         <div className={styles['container']}>
             <div className={styles['sectionA']}>
+                <div className={styles['dropdownMenuBanner']}>
+                </div>
                 <img src = {connex} alt="connex logo" className={styles['landingLogo']}/>
-            
+                {/**
+                <div className={styles['line']}>
+                    <hr />
+                </div>
+                */}
                 <p className={styles['header']}> 
                     Recruitment made hella easy
                 </p>
@@ -31,6 +37,9 @@ const Chong = (props) => {
                 </div>
                 <div className={styles['landingLogin']}>
                     <Link to="/auth/signin">Log In</Link>
+                </div>
+                <div className={styles['landingSignup']}>
+                    <Link to="/auth/signin">Sign Up</Link>
                 </div>
             </div>
         </div>
