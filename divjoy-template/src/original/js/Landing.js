@@ -15,8 +15,10 @@ const Chong = (props) => {
     return (
         <div className={styles['container']}>
             <div className={styles['sectionA']}>
+                {/** 
                 <div className={styles['dropdownMenuBanner']}>
                 </div>
+                */}
                 <img src = {connex} alt="connex logo" className={styles['landingLogo']}/>
                 {/**
                 <div className={styles['line']}>
