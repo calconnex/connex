@@ -9,9 +9,18 @@ import compare from "../icons/compare.png"
 import { useAuth } from "../../util/auth";
 import full from "../icons/full_logo.png";
 import plain from "../icons/plainwhite.png";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Import necessary components
+
 
 
 const Chong = (props) => {
+
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  // Function to toggle the dropdown visibility
+    const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+    };
     return (
         <div className={styles['container']}>
             <div className={styles['sectionA']}>
@@ -37,11 +46,14 @@ const Chong = (props) => {
                 <div className={styles['talentButton']}>
                     I'm looking for talent
                 </div>
+                <div className={styles['globalOpportunitiesTab']}>
+                    <Link to="/signin">Global Opportunities</Link>
+                </div>
                 <div className={styles['landingLogin']}>
-                    <Link to="/auth/signin">Log In</Link>
+                    <Link to="/signin">Log In</Link>
                 </div>
                 <div className={styles['landingSignup']}>
-                    <Link to="/auth/signin">Sign Up</Link>
+                    <Link to="/signin">Sign Up</Link>
                 </div>
             </div>
         </div>
