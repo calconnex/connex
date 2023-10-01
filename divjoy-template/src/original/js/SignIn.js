@@ -14,7 +14,7 @@ const SignIn = () => {
                 <div className="forms">
                     <h2>Sign In</h2>
                     <form>
-                        <div className="form-group">
+                        <div className="sign-in-input">
                             <label htmlFor="email">Email:</label>
                             <input
                                 type="email"
@@ -24,7 +24,7 @@ const SignIn = () => {
                 // Add any necessary input attributes or event handlers here
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="sign-in-input">
                             <label htmlFor="password">Password:</label>
                             <input
                                 type="password"

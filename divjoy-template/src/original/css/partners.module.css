@@ -1922,7 +1922,8 @@ body {
   background-color: rgba(44, 128, 255, 1);
   background-color: #eee;
   background-color: #9c9090;
-  /*border: 2px solid rgba(44, 128, 255, 1);*/
+  background-color: #eee;
+  border: 2px solid rgba(44, 128, 255, 1);
   color: rgba(44, 128, 255, 1); /* Text color */
   padding: 8px 16px; /* Adjust padding for button size */
   border-radius: 4px; /* Rounded corners for the button */
@@ -1945,7 +1946,8 @@ body {
   background-color: rgba(44, 128, 255, 1);
   #background-color: #eee;
   background-color: #9c9090;
-  /*border: 2px solid rgba(44, 128, 255, 1);*/
+  background-color: #eee;
+  border: 2px solid rgba(44, 128, 255, 1);
   color: rgba(44, 128, 255, 1); /* Text color */
   padding: 8px 16px; /* Adjust padding for button size */
   border-radius: 4px; /* Rounded corners for the button */
@@ -1954,6 +1956,7 @@ body {
   right: 10px; /* Adjust the distance from the right */
   cursor: pointer; /* Add pointer cursor for interaction */
   text-decoration: none; /* Remove underlines if it's a link */
+  color: white;
   font-weight: bold; /* Make text bold */
   transition: transform 0.2s;
   /*text-decoration: none !important;*/
@@ -1966,7 +1969,8 @@ body {
 
 .globalOpportunitiesTab {
   background-color: #9c9090;
-  /*border: 2px solid rgba(44, 128, 255, 1);*/
+  background-color: #eee;
+  border: 2px solid rgba(44, 128, 255, 1);
   color: rgba(44, 128, 255, 1); /* Text color */
   padding: 8px 16px; /* Adjust padding for button size */
   border-radius: 4px; /* Rounded corners for the button */
