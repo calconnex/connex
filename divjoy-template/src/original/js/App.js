@@ -12,6 +12,7 @@ import { QueryClientProvider } from "../../util/db";
 import CoffeeChatsApplicant6 from './Partners';
 import Chong from './Landing';
 import ApplicantList from './ApplicantList';
+import Dashboard from './Dashboard';
 
 
 function App() {
@@ -28,11 +29,16 @@ function App() {
               </Route>
               <Route exact path="/auth/:type" component={AuthPage}/>
               */}
-              <Route path = "/">
+              <Route exact path = "/">
                 <Chong />
               </Route>
               <Route path="/signin">
                 <SignIn />
+              </Route>
+              <Route exact path="/auth/:type" component={AuthPage}/>
+              
+              <Route path = "/dashboard">
+                <Dashboard />
               </Route>
               <Route path="/home">
                 <Home />

@@ -1,4 +1,31 @@
 import "../css/SignIn.css";
+import connex from "../icons/logo.png";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
+
+const SignIn = () => {
+
+    return (  
+        <div className="signIn">
+            <div className="everything">
+                <div className="header">
+                    <img src={connex} alt="connex logo" className="logo"/>
+                    Connex
+                </div>
+                <div className="forms">
+                    Welcome to Connex! To use our platform please click the button below.
+                    <Link to="/auth/signin">Go to Connex</Link>
+                </div>
+            </div>
+        </div>
+    );
+}
+ 
+export default SignIn;
+
+/*
+import "../css/SignIn.css";
 import connex from "../icons/connex.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -42,4 +69,4 @@ const SignIn = () => {
     );
 }
  
-export default SignIn;
+export default SignIn; */
