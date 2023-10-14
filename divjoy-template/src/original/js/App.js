@@ -35,6 +35,8 @@ function App() {
               <Route path="/signin">
                 <SignIn />
               </Route>
+              <Route exact path="/auth/:type" component={AuthPage}/>
+              
               <Route path = "/dashboard">
                 <Dashboard />
               </Route>
