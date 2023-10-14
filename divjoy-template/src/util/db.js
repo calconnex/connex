@@ -19,7 +19,9 @@ import {
   deleteDoc,
   serverTimestamp,
 } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 import { firebaseApp } from "./firebase";
+import { useEffect } from "react";
 
 // Initialize Firestore
 const db = getFirestore(firebaseApp);
@@ -104,6 +106,17 @@ export function useAllApplicants() {
     createQuery(() =>
       query(
         collection(db, "Applicants")
+      )
+    )
+  );
+}
+//Gets all acceptances
+export function useAllAcceptances() {
+  return useQuery(
+    ["Acceptances"],
+    createQuery(() =>
+      query(
+        collection(db, "Acceptances")
       )
     )
   );
@@ -195,11 +208,15 @@ export async function getPDF() {
   console.log(docSnap.data())
 }
 
-// Create a new item
-export function createItem(data) {
+// Create a new acceptances item and updates applicants collection
+export function createItem(data, bool) {
+  const user = getAuth().currentUser;
   return addDoc(collection(db, "Acceptances"), {
     ...data,
     createdAt: serverTimestamp(),
+    accepted: bool,
+    acceptedBy : user.displayName,
+    acceptedEmail : user.email
   });
 }
 
@@ -211,6 +228,24 @@ export function updateItem(id, data) {
 // Delete an item
 export function deleteItem(id) {
   return deleteDoc(doc(db, "items", id));
+}
+
+//Delete an item from acceptances collection and updates item status in applicants collection
+export async function dontAccept(bool, data) {
+  console.log("In dontAccept Item")
+  const col = db.collection("Acceptances")
+  const querySnapshot = await col.where("id", "==", data.id).where("acceptedEmail", "==", data.acceptedEmail).where("accepted", "!=", bool).get()
+  if (querySnapshot.exists){
+    return setDoc(doc(db, "Acceptances", querySnapshot.id), {accepeted: bool}, {merge:true});
+  } else{
+    createItem(data, bool)
+  }
+  // const user = getAuth().currentUser;
+  // if (user.email === doc(db, "Acceptances", id).acceptedEmail){
+  //     
+  // } else {
+  //   createItem(data, bool)
+  // }
 }
 
 /**** HELPERS ****/
