@@ -12,34 +12,55 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
 import { connectFirestoreEmulator } from "firebase/firestore";
-import { useAuth } from "../../util/auth";
-import NotFound from "./NotFound";
+
 
 const ApplicantDetails = () => {
   const { id } = useParams();
-  const applicant = useOneApplicant(id);
-  console.log(applicant);
+  const applicant = useOneApplicant(parseInt(id));
   const appData = applicant.data[0]
   const photo = appData.photo[0]
   const photoURL = photo.downloadURL
-  const auth = useAuth()
+
   const [accepted, setAccepted] = useState(false)
   const [rejected, setRejected] = useState(false)
 
+  useEffect(() => {
+    if (accepted) {
+      console.log(appData)
+      createItem(appData, accepted);
+      // setAccepted(false)
+    } else if(rejected) {
+      console.log("Item being unaccepted ");
+      dontAccept(appData.id, accepted)
+      // setRejected(false)
+    }
+  }, [accepted, rejected])
 
+  // const AcceptanceHandler =  async () => {
+  //     setAccepted(true);
+  //     setRejected(false);
+  //     if (accepted) {
+  //       await createItem(appData, true);
+  //     }
+  // }
+
+  // const RejectHandler = () => {
+  //   setAccepted(false);
+  //   setRejected(true);
+  //   createItem(appData, accepted);
+  // }
   
   const handleClose = () => {
     setAccepted(false);
   }
-
   return (
-    auth.user ? (<div className="overall">
+    <div className="overall">
       <Navbar/>
       { appData && (
         <article>
           <div className="left">
             <div className="resume"> 
-              {/* <Pdf id={parseInt(id)}/> */}
+              <Pdf id={parseInt(id)}/>
             </div>
           </div>
           <div className="right">
@@ -50,27 +71,30 @@ const ApplicantDetails = () => {
                   alt="Headshot"
                   className="photo"
                 />
+                <div className="ContactInfo">
+                  <div className="contactTitle">Contact Information</div>
+                  <div>Name: {appData.name}</div>
+                  <div>Major: {appData.major}</div>
+                  <div>Year: {appData.year}</div>
+                </div>
               </div>
-              <div className="EssayGroup">
-                <div className="Essay1Group">
-                    <h1>{appData.name} ({appData.pronouns})</h1>
-                    <div>Year: {appData.year} </div>
-                    <div>Major: {appData.major} </div>
-                    <div>GPA: {appData.gpa} </div>
-                    <br></br>
-                    <hr></hr>
-                    <br></br>
-                    <div>Demographics: {appData.demographic} </div>
-                    <div>LGBTQ+: {appData.lgbtq} </div>
-                    <div>Junior Transfer: {appData.transfer} </div>
-                    <div>First Generation: {appData.firstGen} </div>
-                    <br></br>
-                    <hr></hr>
-                    <br></br>
-                    <h4>Contact Information</h4>
-                    <div>Phone: {appData.phone}</div>
-                    <div>Email: {appData.email}</div>
+              <div className="bibliography">
+                <div className="ReferralGroup">
+                  <div className="ReferralTitle">
+                    Demographic Info
                   </div>
+                  <div className="ReferralBody">
+                    DEI Info
+                  </div>
+                </div>
+                <div className="AttachmentGroup">
+                  <div className="AttachmentTitle">
+                      Attachments:
+                  </div>
+                  <div className="AttachmentBody">
+                    attachment text
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -120,7 +144,6 @@ const ApplicantDetails = () => {
         
         )}   
         </div>  
-    ) : (<NotFound/>)
   );
 }
  
