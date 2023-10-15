@@ -35,6 +35,7 @@ function App() {
               <Route path="/signin">
                 <SignIn />
               </Route>
+
               <Route exact path="/auth/:type" component={AuthPage}/>
               
               <Route path = "/dashboard">
@@ -52,9 +53,7 @@ function App() {
               <Route path="/applicants/:id">
                 <ApplicantDetails />
               </Route>
-              <Route path="*">
-                <NotFound />
-              </Route>
+              
             </Switch>
           </div>
         </Router>
